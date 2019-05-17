@@ -1,0 +1,32 @@
+{
+  "name": "test-vue-multipage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ENV=test parcel src/pages/*.html",
+    "start": "npm run dev",
+    "build": "parcel build src/pages/*.html",
+    "build:test": "ENV=test npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.5.17",
+    "vue-hot-reload-api": "^2.3.0"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "1.2.1",
+    "autosize": "^4.0.2",
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-component": "^1.1.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "element-ui": "^2.4.5",
+    "node-sass": "^4.9.2",
+    "parcel-bundler": "^1.9.7",
+    "vue-cookie": "^1.1.4",
+    "vue-template-compiler": "^2.5.17"
+  }
+}

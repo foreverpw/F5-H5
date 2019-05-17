@@ -1,0 +1,30 @@
+@import "./common/variables.scss";
+@import "./common/reset.scss";
+@import "./footer.scss";
+@import "./button.scss";
+
+body {
+  background-color: $bodyBg;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Microsoft YaHei", "WenQuanYi Micro Hei",PingFangSC-Regular,"Helvetica Neue", "Helvetica","Hiragino Sans GB";
+  color:#333;
+  background: #F3F6F8;
+}
+
+.flex{
+  flex:1
+}
+
+.el-tooltip__popper.is-custom{
+  background: #0084FF;
+  color:white;
+  font-size: 14px;
+  padding:7px 10px;
+  .popper__arrow{
+    border-bottom-color: #0084FF!important;
+    &::after{
+      border-bottom-width: 6px;
+      border-bottom-color: #0084FF!important;
+    }
+  }
+}

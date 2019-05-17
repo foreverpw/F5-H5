@@ -1,0 +1,25 @@
+.btn{
+  width:230px;
+  height:58px;
+  line-height: 58px;
+  text-align: center;
+  margin-right: 70px;
+  border-radius: 29px;
+  font-size: 22px;
+  color:white;
+  cursor: pointer;
+  &:last-child{
+    margin-right: 0;
+  }
+  &.blue{
+    background: linear-gradient(to right, #2F88F4, #2C72FF)
+  }
+  &.white{
+    border:1px solid #2867D9;
+    background: white;
+    color:#0659D6;
+  }
+  &.disable{
+    background: #B3B3B3;
+  }
+}
