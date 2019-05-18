@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import config from '../config'
-import router from '../router'
-import store from '../store'
 import axios from 'axios'
 
 // Vue.prototype.$http = axios;
@@ -9,7 +7,6 @@ axios.defaults.baseURL = config.serviceDomain;
 
 axios.interceptors.request.use(function (conf) {
   // Do something before request is sent
-  conf.data.token = store.state.session.sessionId || window.session
   return conf;
 }, function (error) {
   // Do something with request error
@@ -20,12 +17,7 @@ axios.interceptors.request.use(function (conf) {
 axios.interceptors.response.use(function (resp) {
   if(resp.data.code === 100){
     //route to login
-    router.push({ path: '/error'})
   }else if(resp.data.code !== 0){
-    let errorMsg = resp.data.errorMessage;
-    if(errorMsg){
-      Vue.prototype.$alert(errorMsg);
-    }
     return Promise.reject(resp);
   }
   return resp;
@@ -35,10 +27,16 @@ axios.interceptors.response.use(function (resp) {
 });
 
 export default {
-  getSessionData() {
-    return axios.post('/wdAnswer/getWebEditorSession/',{})
+  getJsSDKSignature() {
+    return axios.post('/weixin/jssdk/getSignature',{url:window.location.href})
     .then((resp) => {
       return resp.data.data;
     });
+  },
+  geocoder(longitude,latitude){
+    let url = '/weixin/jssdk/getLocation';
+    return axios.post(url,{longitude,latitude}).then(res=>{
+      return res.data.data
+    })
   }
 }
