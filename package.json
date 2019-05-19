@@ -13,7 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/preset-env": "^7.4.4",
     "axios-jsonp": "^1.0.2",
+    "iosselect": "^1.1.5",
+    "my-picker": "^1.0.1",
     "vue": "^2.5.17",
     "vue-fullpage.js": "^0.1.3",
     "vue-hot-reload-api": "^2.3.0",

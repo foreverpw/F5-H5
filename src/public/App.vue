@@ -27,11 +27,30 @@
 </template>
 
 <script>
+import IosSelect from 'iosselect'
+import 'iosselect/src/iosSelect.css'
 
 export default {
   components: {
   },
   created(){
+    new IosSelect(2,               // 第一个参数为级联层级，演示为1
+        [[{'id': '10001', 'value': '演示数据1'},{'id': '10002', 'value': '演示数据2'},{'id': '10002', 'value': '演示数据2'},{'id': '10002', 'value': '演示数据2'}],
+        function(oneLevelId,cb) {
+          console.log(oneLevelId)
+          if(oneLevelId=='10001'){
+            cb([{'id': '1', 'value': '1'},{'id': '2', 'value': '2'}])
+          }else{
+            cb([{'id': '3', 'value': '3'},{'id': '4', 'value': '4'}])
+          }
+        }],                             // 演示数据
+        {
+            title: '选择地区',                    // 标题
+            itemHeight: 50,                      // 每个元素的高度
+            itemShowCount: 4,                    // 每一列显示元素个数，超出将隐藏
+            callback: function (selectOneObj) {  // 用户确认选择后的回调函数
+            }
+    });
   },
   computed: {
   },
