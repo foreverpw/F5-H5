@@ -8,7 +8,7 @@
     "https": "ENV=test parcel src/pages/*.html --https",
     "start": "npm run dev",
     "build": "parcel build src/pages/*.html",
-    "build:test": "ENV=test npm run build --public-url ./hupu/"
+    "build:test": "ENV=test parcel build src/pages/*.html --public-url ./hupu/"
   },
   "keywords": [],
   "author": "",
