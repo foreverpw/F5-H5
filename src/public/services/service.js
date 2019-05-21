@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import config from '../config'
 import axios from 'axios'
+import jsonp from 'jsonp'
 
 // Vue.prototype.$http = axios;
 axios.defaults.baseURL = config.serviceDomain;
@@ -34,9 +35,15 @@ export default {
     });
   },
   geocoder(longitude,latitude){
-    let url = '/weixin/jssdk/getLocation';
-    return axios.post(url,{longitude,latitude}).then(res=>{
-      return res.data.data
+    let url = 'https://api.map.baidu.com/geocoder/v2/?ak=hTtFgDnayWhDNycGArDQmy3utWgsYSpQ&location=' + latitude + ',' + longitude + '&output=json&coordtype=wgs84ll';
+    return new Promise((resolve, reject) => {
+      jsonp(url,{},function(err,data) {
+        if(err){
+          reject(err)
+        }else{
+          resolve(data.result)
+        }
+      })
     })
   }
 }

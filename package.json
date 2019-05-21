@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "ENV=test parcel src/pages/*.html",
+    "https": "ENV=test parcel src/pages/*.html --https",
     "start": "npm run dev",
     "build": "parcel build src/pages/*.html",
     "build:test": "ENV=test npm run build"
@@ -16,6 +17,7 @@
     "@babel/preset-env": "^7.4.4",
     "axios-jsonp": "^1.0.2",
     "iosselect": "^1.1.5",
+    "jsonp": "^0.2.1",
     "my-picker": "^1.0.1",
     "vue": "^2.5.17",
     "vue-fullpage.js": "^0.1.3",

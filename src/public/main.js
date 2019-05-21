@@ -28,7 +28,8 @@ for(name in filters){
 
 Vue.config.productionTip = false
 
-require('./weixin')
+// require('./weixin')
+require('./location.js')
 
 new Vue({
   el: '#app',
