@@ -7,7 +7,7 @@
     "dev": "ENV=test parcel src/pages/*.html",
     "https": "ENV=test parcel src/pages/*.html --https",
     "start": "npm run dev",
-    "build": "parcel build src/pages/*.html",
+    "build": "parcel build src/pages/*.html --public-url ./",
     "build:test": "ENV=test npm run build"
   },
   "keywords": [],
