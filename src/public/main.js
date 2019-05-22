@@ -1,11 +1,16 @@
 import Vue from 'vue'
 import App from './App'
 import './assets/scss/main.scss';
+import 'animate.css'
 import VueCookie from 'vue-cookie';
 Vue.use(VueCookie);
 
 import VueFullPage from 'vue-fullpage.js'
 Vue.use(VueFullPage);
+
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
 //register filters
 import filters from './common/filters'

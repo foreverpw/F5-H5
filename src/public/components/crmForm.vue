@@ -1,0 +1,140 @@
+<template>
+  <div class="container" ref="form">
+    <div class="line">
+      <div class="label">姓名</div>
+      <input class="input" type="text" @focus="focus" @blur="blur">
+    </div>
+    <div class="line">
+      <div class="label">手机号</div>
+      <input class="input" type="number" @focus="focus" @blur="blur">
+    </div>
+    <div class="line">
+      <div class="label">省份</div>
+      <select name="" id="" v-model="province" class="input" @focus="focus" @blur="blur" @change="provinceChange">
+        <option disabled value="">请选择省份</option>
+        <option v-for="p in Object.keys(PROVINCE_CITY_MAP)" :key="p">{{p}}</option>
+      </select>
+      <div class="down-triangle"></div>
+    </div>
+    <div class="line">
+      <div class="label">城市</div>
+      <select name="" id="" v-model="city" class="input" @focus="focus" @blur="blur">
+        <option disabled value="">请选择城市</option>
+        <option v-for="c in cities" :key="c">{{c}}</option>
+      </select>
+      <div class="down-triangle"></div>
+    </div>
+    <div class="line">
+      <div class="label">经销商</div>
+      <select name="" id="" v-model="shop" class="input" @focus="focus" @blur="blur">
+        <option disabled value="">请选择经销商</option>
+        <option v-for="c in cities" :key="c">{{c}}</option>
+      </select>
+      <div class="down-triangle"></div>
+    </div>
+    <button class="submit-btn">确认提交</button>
+  </div>
+</template>
+<script>
+import {PROVINCE_CITY_MAP} from '../common/constant'
+export default {
+  created(){
+    const originHeight = document.documentElement.clientHeight || document.body.clientHeight;
+    window.addEventListener('resize', function() {
+      const resizeHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      if (resizeHeight < originHeight) {
+        //alert('弹')
+      } else {
+        //alert('收')
+      }
+    }, false);
+  },
+  data(){
+    return {
+      PROVINCE_CITY_MAP,
+      cities:[],
+      province:'',
+      city:'',
+      shop:''
+    }
+  },
+  methods:{
+    focus(e){
+      // window.fp.api.setAllowScrolling(false);
+      clearTimeout(this.scrollTO)
+    },
+    blur(e){
+      // window.fp.api.setAllowScrolling(true);
+      this.scrollTO = setTimeout(() => {
+        window.scrollTo(0,0)
+      }, 100);
+    },
+    provinceChange(){
+      this.cities = this.PROVINCE_CITY_MAP[this.province]
+    }
+  }
+}
+</script>
+<style lang="scss" scoped>
+.container{
+  width:20.72rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // position: fixed;
+  // left:4.56rem;
+  // top:-11rem;
+}
+.line{
+  margin-bottom:0.9rem;
+  height:2.96rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: white;
+  position: relative;
+  .label{
+    width:5.36rem;
+    height:100%;
+    line-height:2.96rem;
+    padding-left:1.04rem;
+    background: #CFC0C5;
+    font-size:1.12rem;
+    color:#53162D;
+  }
+  .input{
+    width:15.4rem;
+    height:100%;
+    line-height: 2.96rem;
+    padding:0 1rem;
+    padding-right: 2.25rem;
+    color:#444;
+    font-size: 1.12rem;
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none; 
+    border:none;
+    background: white;
+  }
+  .down-triangle{
+    width: 0;
+    height: 0;
+    border-top:0.56rem solid #CFC0C5;
+    border-bottom:0;
+    border-left:0.4rem solid white;
+    border-right:0.4rem solid white;
+    position: absolute;
+    right:1.08rem;
+    top:1.2rem;
+  }
+}
+.submit-btn{
+  width:20.36rem;
+  height:3.2rem;
+  background: #D91A57;
+  line-height: 3.2rem;
+  text-align: center;
+  color:white;
+  margin-top: 1.52rem;
+}
+</style>

@@ -15,11 +15,13 @@
   "license": "ISC",
   "dependencies": {
     "@babel/preset-env": "^7.4.4",
+    "animate.css": "^3.7.0",
     "axios-jsonp": "^1.0.2",
     "iosselect": "^1.1.5",
     "jsonp": "^0.2.1",
     "my-picker": "^1.0.1",
     "vue": "^2.5.17",
+    "vue-awesome-swiper": "^3.1.3",
     "vue-fullpage.js": "^0.1.3",
     "vue-hot-reload-api": "^2.3.0",
     "wechat-jssdk": "^5.0.1"
