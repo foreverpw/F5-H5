@@ -2,8 +2,8 @@ import Vue from 'vue'
 import App from './App'
 import './assets/scss/main.scss';
 import 'animate.css'
-import VueCookie from 'vue-cookie';
-Vue.use(VueCookie);
+// import VueCookie from 'vue-cookie';
+// Vue.use(VueCookie);
 
 import VueFullPage from 'vue-fullpage.js'
 Vue.use(VueFullPage);
@@ -19,11 +19,11 @@ for(name in filters){
 }
 
 //fontawesome
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPause,faPlay } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-library.add(faPause,faPlay)
-Vue.component('fa', FontAwesomeIcon)
+// import { library } from '@fortawesome/fontawesome-svg-core'
+// import { faPause,faPlay } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+// library.add(faPause,faPlay)
+// Vue.component('fa', FontAwesomeIcon)
 
 //video.js
 import 'video.js/dist/video-js.css'

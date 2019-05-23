@@ -57,7 +57,8 @@ export default {
   mounted(){
     window.fp = this.$refs.fullpage
     // this.$refs.bgMusic.play()
-    this.bgMusic = document.getElementById('bg_music')
+    this.bgMusic = new Audio(bgmUrl);
+    this.bgMusic.loop = true;
     setTimeout(() => {
       if(this.bgMusic.paused){
         // this.bgMusic.play();

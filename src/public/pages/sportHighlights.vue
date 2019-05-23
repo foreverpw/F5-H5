@@ -15,16 +15,16 @@
   </div>
 </template>
 <script>
-import videojs from 'video.js'
+// import videojs from 'video.js'
+var videojsPromise = import('../lib/video.js')
 import gameImgs from '../assets/imgs/sportHighlights/*.jpg'
 export default {
   components:{
   },
   mounted() {
-    // document.addEventListener("WeixinJSBridgeReady", ()=>{  
-    //   this.$refs.video.play()
-    // }, false);
-    this.video = videojs('game_video')
+    videojsPromise.then(videojs=>{
+      this.video = videojs('game_video')
+    })
   },
   data(){
     return {
