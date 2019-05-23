@@ -37,3 +37,15 @@ body{
     color:#0894ec;
   }
 }
+
+.vjs-big-play-button{
+  border:none!important;
+  left:50%!important;
+  top:50%!important;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 100%!important;
+  width: 1.6em!important;
+  height: 1.6em!important;
+  line-height: 1.6em!important;
+  background-color: rgba(111, 111, 111, 0.6)!important;
+}

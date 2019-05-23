@@ -18,6 +18,16 @@ for(name in filters){
   Vue.filter(name, filters[name])
 }
 
+//fontawesome
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faPause,faPlay } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+library.add(faPause,faPlay)
+Vue.component('fa', FontAwesomeIcon)
+
+//video.js
+import 'video.js/dist/video-js.css'
+
 !(function(doc, win) {
   var docEle = doc.documentElement,
       evt = "onorientationchange" in window ? "orientationchange" : "resize",

@@ -60,11 +60,11 @@ export default {
     this.bgMusic = document.getElementById('bg_music')
     setTimeout(() => {
       if(this.bgMusic.paused){
-        this.bgMusic.play();
+        // this.bgMusic.play();
       }
     }, 500);
     document.addEventListener("WeixinJSBridgeReady", ()=>{  
-      this.bgMusic.play();  
+      // this.bgMusic.play();  
     }, false);
   },
   computed: {
