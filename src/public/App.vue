@@ -1,11 +1,13 @@
 <template>
   <div class="app">
     <img src="./assets/imgs/404.png" alt="" class="share-icon">
+    <!-- <audio style="display:none; height: 0" ref="bgMusic" id="bg_music" preload="auto" loop="loop" src="./assets/bg.mp3"></audio> -->
     <div class="rotate-mask">
       你要竖屏
     </div>
     <form-modal :show.sync="showModal"></form-modal>
     <div class="reserve-btn" @click="showModal=true"></div>
+    <div class="music-btn" @click="toggleBGM"></div>
     <full-page ref="fullpage" :options="options">
       <div class="section">
         <button class="next" @click="$refs.fullpage.api.moveSectionDown()">Next</button>
@@ -14,6 +16,7 @@
       </div>
       <reserve class="section"></reserve>
       <f5 class="section"></f5>
+      <sport-highlights class="section"></sport-highlights>
       <!-- <div class="section">
         <button class="prev" @click="$refs.fullpage.api.moveSectionUp()">Prev</button>
         Section 2
@@ -31,7 +34,9 @@
 // import 'iosselect/src/iosSelect.css'
 import Reserve from './pages/reserve'
 import F5 from './pages/f5'
+import SportHighlights from './pages/sportHighlights'
 import FormModal from './components/formModal'
+import bgmUrl from './assets/bg.mp3'
 
 window.options = {
   licenseKey:'asdf',
@@ -43,6 +48,7 @@ window.options = {
 export default {
   components: {
     Reserve,
+    SportHighlights,
     FormModal,
     F5
   },
@@ -50,6 +56,16 @@ export default {
   },
   mounted(){
     window.fp = this.$refs.fullpage
+    // this.$refs.bgMusic.play()
+    this.bgMusic = document.getElementById('bg_music')
+    setTimeout(() => {
+      if(this.bgMusic.paused){
+        this.bgMusic.play();
+      }
+    }, 500);
+    document.addEventListener("WeixinJSBridgeReady", ()=>{  
+      this.bgMusic.play();  
+    }, false);
   },
   computed: {
   },
@@ -60,6 +76,13 @@ export default {
     }
   },
   methods:{
+    toggleBGM(){
+      if(this.bgMusic.paused){
+        this.bgMusic.play()
+      }else{
+        this.bgMusic.pause()
+      }
+    }
   }
 }
 
@@ -82,6 +105,15 @@ export default {
     background: black;
     position: fixed;
     right:20px;
+    top:20px;
+    z-index: 9999;
+  }
+  .music-btn{
+    width:30px;
+    height:30px;
+    background: gray;
+    position: fixed;
+    right:60px;
     top:20px;
     z-index: 9999;
   }

@@ -35,6 +35,12 @@ export default {
     });
   },
   geocoder(longitude,latitude){
+    let url = '/weixin/jssdk/getLocation';
+    return axios.post(url,{longitude,latitude}).then(res=>{
+      return res.data.data
+    })
+  },
+  geocoderBaidu(longitude,latitude){
     let url = 'https://api.map.baidu.com/geocoder/v2/?ak=hTtFgDnayWhDNycGArDQmy3utWgsYSpQ&location=' + latitude + ',' + longitude + '&output=json&coordtype=wgs84ll';
     return new Promise((resolve, reject) => {
       jsonp(url,{},function(err,data) {

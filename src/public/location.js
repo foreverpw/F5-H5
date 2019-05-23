@@ -3,7 +3,7 @@ import service from './services/service'
 function showPosition(position)
 {
   let {longitude,latitude} = position.coords
-  service.geocoder(longitude,latitude).then(data=>{
+  service.geocoderBaidu(longitude,latitude).then(data=>{
     alert(data.formatted_address)
   })
 }

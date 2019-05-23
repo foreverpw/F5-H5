@@ -3,7 +3,7 @@ import service from './services/service'
 
 window.jsSDKReady = service.getJsSDKSignature().then(signData=>{
   const config = Object.assign(signData,{
-    debug:true,
+    // debug:true,
     jsApiList:['updateAppMessageShareData','updateTimelineShareData','getLocation']
   })
   
@@ -13,34 +13,34 @@ window.jsSDKReady = service.getJsSDKSignature().then(signData=>{
 })
 
 window.jsSDKReady.then(({wx})=>{
-  let shareConfig = {
-    title: '测试标题1', // 分享标题
-    desc: '该好好干', // 分享描述
-    link: location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-    imgUrl: 'https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png', // 分享图标
-  }
-  wx.updateAppMessageShareData({ 
-    ...shareConfig,
-    success: function () {
-      // 设置成功
-    },
-    fail(err){
-      wx.onMenuShareAppMessage({
-        ...shareConfig
-      });
-    }
-  })
-  wx.updateTimelineShareData({ 
-    ...shareConfig,
-    success: function () {
-      // 设置成功
-    },
-    fail(err){
-      wx.onMenuShareTimeline({
-        ...shareConfig
-      });
-    }
-  })
+  // let shareConfig = {
+  //   title: '测试标题1', // 分享标题
+  //   desc: '该好好干', // 分享描述
+  //   link: location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+  //   imgUrl: 'https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png', // 分享图标
+  // }
+  // wx.updateAppMessageShareData({ 
+  //   ...shareConfig,
+  //   success: function () {
+  //     // 设置成功
+  //   },
+  //   fail(err){
+  //     wx.onMenuShareAppMessage({
+  //       ...shareConfig
+  //     });
+  //   }
+  // })
+  // wx.updateTimelineShareData({ 
+  //   ...shareConfig,
+  //   success: function () {
+  //     // 设置成功
+  //   },
+  //   fail(err){
+  //     wx.onMenuShareTimeline({
+  //       ...shareConfig
+  //     });
+  //   }
+  // })
   wx.getLocation({
     type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
     success: function (res) {
