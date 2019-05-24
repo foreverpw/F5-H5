@@ -18,7 +18,7 @@
     </div>
     <div class="line">
       <div class="label">城市</div>
-      <select name="" id="" v-model="city" class="input" @focus="focus" @blur="blur">
+      <select name="" id="" v-model="city" class="input" @focus="focus" @blur="blur" @change="cityChange">
         <option disabled value="">请选择城市</option>
         <option v-for="c in cities" :key="c">{{c}}</option>
       </select>
@@ -28,7 +28,7 @@
       <div class="label">经销商</div>
       <select name="" id="" v-model="shop" class="input" @focus="focus" @blur="blur">
         <option disabled value="">请选择经销商</option>
-        <option v-for="c in cities" :key="c">{{c}}</option>
+        <option v-for="a in agencies" :key="a.shnumber">{{a.shortName}}</option>
       </select>
       <div class="down-triangle"></div>
     </div>
@@ -36,7 +36,7 @@
   </div>
 </template>
 <script>
-import {PROVINCE_CITY_MAP} from '../common/constant'
+import {PROVINCE_CITY_MAP,CITY_AGENCIES_MAP} from '../common/constant'
 export default {
   created(){
     const originHeight = document.documentElement.clientHeight || document.body.clientHeight;
@@ -54,6 +54,7 @@ export default {
       PROVINCE_CITY_MAP,
       cities:[],
       province:'',
+      agencies:[],
       city:'',
       shop:''
     }
@@ -71,6 +72,9 @@ export default {
     },
     provinceChange(){
       this.cities = this.PROVINCE_CITY_MAP[this.province]
+    },
+    cityChange(){
+      this.agencies = CITY_AGENCIES_MAP[this.city]
     }
   }
 }

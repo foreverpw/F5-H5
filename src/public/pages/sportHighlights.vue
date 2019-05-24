@@ -1,5 +1,5 @@
 <template>
-  <div class="game-section">
+  <bg :page="4" class="game-section">
     <img v-for="(img,i) in imgs" :key="i" :src="img" alt="" @click="preview(img)">
     <div class="video-container">
       <!-- <fa class="icon" v-if="!playing()" icon="play"></fa> -->
@@ -12,14 +12,16 @@
                  :playsinline="true">
       </video-player> -->
     </div>
-  </div>
+  </bg>
 </template>
 <script>
 // import videojs from 'video.js'
 var videojsPromise = import('../lib/video.js')
 import gameImgs from '../assets/imgs/sportHighlights/*.jpg'
+import bg from '../components/bg'
 export default {
   components:{
+    bg
   },
   mounted() {
     videojsPromise.then(videojs=>{

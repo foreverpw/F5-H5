@@ -5,18 +5,23 @@
     <div class="rotate-mask">
       你要竖屏
     </div>
+    <div class="header">
+      <img src="./assets/imgs/logo.png" alt="" class="logo">
+      <img src="./assets/imgs/reserve.png" alt="" class="reserve-btn" @click="showModal=true">
+    </div>
     <form-modal :show.sync="showModal"></form-modal>
-    <div class="reserve-btn" @click="showModal=true"></div>
-    <div class="music-btn" @click="toggleBGM"></div>
+    <!-- <div class="reserve-btn" @click="showModal=true"></div> -->
+    <!-- <div class="music-btn" @click="toggleBGM"></div> -->
     <full-page ref="fullpage" :options="options">
-      <div class="section">
-        <button class="next" @click="$refs.fullpage.api.moveSectionDown()">Next</button>
-        Section 1
-        <input type="text">
-      </div>
+      <landing class="section"></landing>
       <reserve class="section"></reserve>
       <f5 class="section"></f5>
       <sport-highlights class="section"></sport-highlights>
+      <!-- <div class="section">
+        <button class="next" @click="$refs.fullpage.api.moveSectionDown()">Next</button>
+        Section 1
+        <input type="text">
+      </div> -->
       <!-- <div class="section">
         <button class="prev" @click="$refs.fullpage.api.moveSectionUp()">Prev</button>
         Section 2
@@ -32,6 +37,7 @@
 <script>
 // import IosSelect from 'iosselect'
 // import 'iosselect/src/iosSelect.css'
+import Landing from './pages/landing'
 import Reserve from './pages/reserve'
 import F5 from './pages/f5'
 import SportHighlights from './pages/sportHighlights'
@@ -42,11 +48,12 @@ window.options = {
   licenseKey:'asdf',
   autoScrolling:true,
   scrollingSpeed:400,
-  sectionsColor: ['#41b883', '#ff5f45', '#0798ec']
+  // sectionsColor: ['#41b883', '#ff5f45', '#0798ec']
 }
 
 export default {
   components: {
+    Landing,
     Reserve,
     SportHighlights,
     FormModal,
@@ -57,16 +64,16 @@ export default {
   mounted(){
     window.fp = this.$refs.fullpage
     // this.$refs.bgMusic.play()
-    this.bgMusic = new Audio(bgmUrl);
-    this.bgMusic.loop = true;
-    setTimeout(() => {
-      if(this.bgMusic.paused){
-        // this.bgMusic.play();
-      }
-    }, 500);
-    document.addEventListener("WeixinJSBridgeReady", ()=>{  
-      // this.bgMusic.play();  
-    }, false);
+    // this.bgMusic = new Audio(bgmUrl);
+    // this.bgMusic.loop = true;
+    // setTimeout(() => {
+    //   if(this.bgMusic.paused){
+    //     // this.bgMusic.play();
+    //   }
+    // }, 500);
+    // document.addEventListener("WeixinJSBridgeReady", ()=>{  
+    //   // this.bgMusic.play();  
+    // }, false);
   },
   computed: {
   },
@@ -92,6 +99,25 @@ export default {
   .app{
     height:100%;
   }
+  .header{
+    width: 100%;
+    position: fixed;
+    height:3.8rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-left:1.64rem;
+    padding-right: 1rem;
+    z-index: 999;
+    .logo{
+      width: 11.96rem;
+      height:1.68rem;
+    }
+    .reserve-btn{
+      width:6.72rem;
+      height:2.48rem;
+    }
+  }
   .rotate-mask{
     width: 100%;
     height:100%;
@@ -99,15 +125,6 @@ export default {
     position: fixed;
     z-index: 9999;
     display: none
-  }
-  .reserve-btn{
-    width:30px;
-    height:30px;
-    background: black;
-    position: fixed;
-    right:20px;
-    top:20px;
-    z-index: 9999;
   }
   .music-btn{
     width:30px;

@@ -51,5 +51,11 @@ export default {
         }
       })
     })
+  },
+  submitCrm({province,city,name,phone,shnumber}) {
+    return axios.post('/user/submitCrm',{province,city,name,phone,shnumber})
+    .then((resp) => {
+      return resp.data.data;
+    });
   }
 }
