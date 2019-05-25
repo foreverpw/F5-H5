@@ -1,19 +1,20 @@
 <template>
-  <div class="reserve-section">
+  <bg :page="3" class="reserve-section">
     <crm-form class="form"></crm-form>
-  </div>
+  </bg>
 </template>
 <script>
 import CrmForm from '../components/crmForm'
+import bg from '../components/bg'
 export default {
   components:{
-    CrmForm
+    CrmForm,
+    bg
   }
 }
 </script>
 <style lang="scss" scoped>
   .reserve-section{
-    background: #ff5f45;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,6 +1,6 @@
 <template>
-  <div class="bg" :class="{bg1:page==1||page==3}">
-    <img src="../assets/imgs/bgs/car.png" alt="" class="car">
+  <div class="bg" :class="{bg1:page==1,bg3:page==3}">
+    <!-- <img src="../assets/imgs/bgs/car1.png" alt="" class="car"> -->
     <div class="content">
       <slot></slot>
     </div>
@@ -31,12 +31,15 @@ export default {
   .bg{
     height:100%;
     width:100%;
-    background-image: url(../assets/imgs/bgs/bg2.png);
+    background-image: url(../assets/imgs/bgs/bg.png);
     background-size: cover;
-    background-position: left 100%;
+    background-position: center center;
     position: relative;
     &.bg1{
       background-image: url(../assets/imgs/bgs/bg1.png);
+    }
+    &.bg3{
+      background-image: url(../assets/imgs/bgs/bg3.png);
     }
     .content{
       position: absolute;
@@ -48,8 +51,9 @@ export default {
       z-index: 999;
     }
     .car{
-      width: 100%;
+      width: 20rem;
       bottom:10vh;
+      right:1.7rem;
       position: absolute;
     }
   }

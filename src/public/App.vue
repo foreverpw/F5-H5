@@ -9,6 +9,7 @@
       <img src="./assets/imgs/logo.png" alt="" class="logo">
       <img src="./assets/imgs/reserve.png" alt="" class="reserve-btn" @click="showModal=true">
     </div>
+    <img src="./assets/imgs/icons/scroll.png" alt="" class="scroll-icon animated flash infinite">
     <form-modal :show.sync="showModal"></form-modal>
     <!-- <div class="reserve-btn" @click="showModal=true"></div> -->
     <!-- <div class="music-btn" @click="toggleBGM"></div> -->
@@ -117,6 +118,15 @@ export default {
       width:6.72rem;
       height:2.48rem;
     }
+  }
+  .scroll-icon{
+    position: fixed;
+    width:2.76rem;
+    z-index: 999;
+    bottom:2.28rem;
+    left:50%;
+    transform: translateX(-50%);
+    animation-duration: 2.5s;
   }
   .rotate-mask{
     width: 100%;
