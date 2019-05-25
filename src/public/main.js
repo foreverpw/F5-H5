@@ -35,8 +35,11 @@ import 'video.js/dist/video-js.css'
   var docEle = doc.documentElement,
       evt = "onorientationchange" in window ? "orientationchange" : "resize",
       fn = function() {
-          var width = docEle.clientWidth;
-          width && (docEle.style.fontSize = 25 * (width / 750) + "px");
+        var width = docEle.clientWidth;
+        width && (docEle.style.fontSize = 25 * (width / 750) + "px");
+        if(window.fp){
+          window.fp.api.reBuild()
+        }
       };
    
   win.addEventListener('resize', fn, false);

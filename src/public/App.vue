@@ -3,7 +3,7 @@
     <img src="./assets/imgs/404.png" alt="" class="share-icon">
     <!-- <audio style="display:none; height: 0" ref="bgMusic" id="bg_music" preload="auto" loop="loop" src="./assets/bg.mp3"></audio> -->
     <div class="rotate-mask">
-      你要竖屏
+      请在竖屏模式下浏览
     </div>
     <div class="header">
       <img src="./assets/imgs/logo.png" alt="" class="logo">
@@ -74,6 +74,11 @@ export default {
   },
   mounted(){
     window.fp = this.$refs.fullpage
+    window.addEventListener('orientationchange', function() {
+      setTimeout(() => {
+         window.fp.api.reBuild()
+      }, 100);
+    }, false);
     // this.$refs.bgMusic.play()
     // this.bgMusic = new Audio(bgmUrl);
     // this.bgMusic.loop = true;
@@ -158,10 +163,14 @@ export default {
   .rotate-mask{
     width: 100%;
     height:100%;
-    background: red;
+    background: #555;
     position: fixed;
     z-index: 9999;
-    display: none
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color:#fff;
   }
   .music-btn{
     width:30px;
@@ -181,7 +190,7 @@ export default {
   @media screen and (orientation:landscape) {
     // CSS applied when the device is in landscape mode
     .rotate-mask{
-      display:block;
+      display: flex;
     }
   }
 </style>
