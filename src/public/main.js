@@ -5,6 +5,9 @@ import 'animate.css'
 // import VueCookie from 'vue-cookie';
 // Vue.use(VueCookie);
 
+import Alert from './components/alert/main.js'
+Vue.prototype.$alert = Alert
+
 import VueFullPage from 'vue-fullpage.js'
 Vue.use(VueFullPage);
 

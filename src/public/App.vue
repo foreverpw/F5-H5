@@ -7,14 +7,16 @@
     </div>
     <div class="header">
       <img src="./assets/imgs/logo.png" alt="" class="logo">
-      <img src="./assets/imgs/reserve.png" alt="" class="reserve-btn" @click="showModal=true">
+      <img src="./assets/imgs/reserve.png" alt="" v-show="showReserveBtn" class="reserve-btn" @click="showModal=true">
     </div>
     <img src="./assets/imgs/icons/scroll.png" alt="" class="scroll-icon animated flash infinite">
-    <form-modal :show.sync="showModal"></form-modal>
+    <form-modal :show.sync="showModal" @success="success"></form-modal>
+    <success :show.sync="showSuccess"></success>
     <!-- <div class="reserve-btn" @click="showModal=true"></div> -->
     <!-- <div class="music-btn" @click="toggleBGM"></div> -->
     <full-page ref="fullpage" :options="options">
       <landing class="section"></landing>
+      <event class="section"></event>
       <reserve class="section"></reserve>
       <f5 class="section"></f5>
       <sport-highlights class="section"></sport-highlights>
@@ -39,26 +41,33 @@
 // import IosSelect from 'iosselect'
 // import 'iosselect/src/iosSelect.css'
 import Landing from './pages/landing'
+import Event from './pages/event'
 import Reserve from './pages/reserve'
 import F5 from './pages/f5'
 import SportHighlights from './pages/sportHighlights'
 import FormModal from './components/formModal'
+import Success from './components/successModal/index'
 import bgmUrl from './assets/bg.mp3'
 
 window.options = {
   licenseKey:'asdf',
   autoScrolling:true,
   scrollingSpeed:400,
+  onLeave(origin, destination, direction){
+    debugger
+  },
   // sectionsColor: ['#41b883', '#ff5f45', '#0798ec']
 }
 
 export default {
   components: {
     Landing,
+    Event,
     Reserve,
     SportHighlights,
     FormModal,
-    F5
+    F5,
+    Success
   },
   created(){
   },
@@ -80,17 +89,32 @@ export default {
   },
   data(){
     return{
-      options: window.options,
-      showModal:false
+      options:{
+        licenseKey:'asdf',
+        autoScrolling:true,
+        scrollingSpeed:400,
+        onLeave:this.onLeave,
+        // sectionsColor: ['#41b883', '#ff5f45', '#0798ec']
+      },
+      showModal:false,
+      showReserveBtn:true,
+      showSuccess:false
     }
   },
   methods:{
+    onLeave(origin, destination, direction){
+      this.showReserveBtn = destination.index!=2
+    },
     toggleBGM(){
       if(this.bgMusic.paused){
         this.bgMusic.play()
       }else{
         this.bgMusic.pause()
       }
+    },
+    success(){
+      this.showModal = false
+      this.showSuccess = true
     }
   }
 }

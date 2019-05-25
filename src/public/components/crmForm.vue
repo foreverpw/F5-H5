@@ -2,11 +2,11 @@
   <div class="container" ref="form">
     <div class="line">
       <div class="label">姓名</div>
-      <input class="input" type="text" @focus="focus" @blur="blur">
+      <input class="input" v-model="name" type="text" @focus="focus" @blur="blur">
     </div>
     <div class="line">
       <div class="label">手机号</div>
-      <input class="input" type="number" @focus="focus" @blur="blur">
+      <input class="input" v-model="phone" type="number" @focus="focus" @blur="blur">
     </div>
     <div class="line">
       <div class="label">省份</div>
@@ -26,17 +26,21 @@
     </div>
     <div class="line">
       <div class="label">经销商</div>
-      <select name="" id="" v-model="shop" class="input" @focus="focus" @blur="blur">
+      <select name="" id="" v-model="shnumber" class="input" @focus="focus" @blur="blur">
         <option disabled value="">请选择经销商</option>
         <option v-for="a in agencies" :key="a.shnumber">{{a.shortName}}</option>
       </select>
       <div class="down-triangle"></div>
     </div>
-    <button class="submit-btn">确认提交</button>
+    <button class="submit-btn" @click="submit">确认提交</button>
+    <div class="success-mask">
+      <div class="success-modal"></div>
+    </div>
   </div>
 </template>
 <script>
 import {PROVINCE_CITY_MAP,CITY_AGENCIES_MAP} from '../common/constant'
+import service from '../services/service'
 export default {
   created(){
     const originHeight = document.documentElement.clientHeight || document.body.clientHeight;
@@ -51,12 +55,14 @@ export default {
   },
   data(){
     return {
+      name:'',
+      phone:'',
       PROVINCE_CITY_MAP,
       cities:[],
       province:'',
       agencies:[],
       city:'',
-      shop:''
+      shnumber:''
     }
   },
   methods:{
@@ -72,9 +78,35 @@ export default {
     },
     provinceChange(){
       this.cities = this.PROVINCE_CITY_MAP[this.province]
+      this.shnumber = ''
     },
     cityChange(){
       this.agencies = CITY_AGENCIES_MAP[this.city]
+      this.shnumber = ''
+    },
+    submit(){
+      if(!this.name){
+        return this.$alert('请填写姓名')
+      }
+      if(!this.phone){
+        return this.$alert('请填写手机')
+      }
+      if(!this.province){
+        return this.$alert('请选择省份')
+      }
+      if(!this.city){
+        return this.$alert('请选择城市')
+      }
+      if(!this.shnumber){
+        return this.$alert('请选择经销商')
+      }
+      let {province,city,name,phone,shnumber} = this
+      service.submitCrm({province,city,name,phone,shnumber}).then(data=>{
+        this.$emit('success')
+      }).catch(err=>{
+        this.$emit('success')
+        this.$alert('提交出错')
+      })
     }
   }
 }
@@ -140,5 +172,6 @@ export default {
   text-align: center;
   color:white;
   margin-top: 1.52rem;
+  font-size:1.12rem;
 }
 </style>

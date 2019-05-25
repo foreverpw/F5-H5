@@ -10,12 +10,6 @@ export default {
   components:{
     bg
   },
-  props:{
-    page:{
-      type: Number,
-      default: 1
-    }
-  },
   mounted() {
   },
   data(){

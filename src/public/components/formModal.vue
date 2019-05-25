@@ -6,7 +6,7 @@
   >
     <div class="mask" @click.self="maskClick" v-show="show">
       <div class="modal">
-        <crm-form></crm-form>
+        <crm-form @success="$emit('success')"></crm-form>
       </div>
     </div>
   </transition>

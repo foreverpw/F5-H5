@@ -44,10 +44,9 @@ export default {
     .content{
       position: absolute;
       left:0;
-      top:0;
+      top:3.8rem;;
       width:100%;
-      height:100%;
-      padding-top:3.8rem;
+      height:calc(100% - 3.8rem);
       z-index: 999;
     }
     .car{
