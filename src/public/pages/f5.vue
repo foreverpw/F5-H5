@@ -1,36 +1,40 @@
 <template>
-  <div class="f5-section">
-    <div class="tabs">
-      <div class="tab" style="background:red" @click="type=1"></div>
-      <div class="tab" style="background:blue" @click="type=2"></div>
+  <bg :page="5">
+    <div class="f5-section">
+      <div class="tabs">
+        <div class="tab" style="background:red" @click="type=1"></div>
+        <div class="tab" style="background:blue" @click="type=2"></div>
+      </div>
+      <div class="content">
+        <transition
+          name="custom-classes-transition"
+          enter-active-class="animated fadeIn faster delay-500ms"
+          leave-active-class="animated fadeOut faster"
+        >
+          <car-features class="child" v-show="type==1"></car-features>
+        </transition>
+        <transition
+          name="custom-classes-transition"
+          enter-active-class="animated fadeIn faster delay-500ms"
+          leave-active-class="animated fadeOut faster"
+        >
+          <car-photos class="child" v-show="type==2"></car-photos>
+        </transition>
+      </div>
     </div>
-    <div class="content">
-      <transition
-        name="custom-classes-transition"
-        enter-active-class="animated fadeIn faster delay-500ms"
-        leave-active-class="animated fadeOut faster"
-      >
-        <car-features class="child" v-show="type==1"></car-features>
-      </transition>
-      <transition
-        name="custom-classes-transition"
-        enter-active-class="animated fadeIn faster delay-500ms"
-        leave-active-class="animated fadeOut faster"
-      >
-        <car-photos class="child" v-show="type==2"></car-photos>
-      </transition>
-    </div>
-  </div>
+  </bg>
 </template>
 <script>
 import CrmForm from '../components/crmForm'
 import CarFeatures from '../components/carFeatures'
 import CarPhotos from '../components/carPhotos'
+import bg from '../components/bg'
 export default {
   components:{
     CrmForm,
     CarFeatures,
-    CarPhotos
+    CarPhotos,
+    bg
   },
   mounted() {
   },

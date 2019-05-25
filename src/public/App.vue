@@ -9,7 +9,8 @@
       <img src="./assets/imgs/logo.png" alt="" class="logo">
       <img src="./assets/imgs/reserve.png" alt="" v-show="showReserveBtn" class="reserve-btn" @click="showModal=true">
     </div>
-    <img src="./assets/imgs/icons/scroll.png" alt="" class="scroll-icon animated flash infinite">
+    <img src="./assets/imgs/icons/scroll.png" alt="" @click="$refs.fullpage.api.moveSectionUp()" 
+    v-show="index<4" class="scroll-icon animated flash infinite">
     <form-modal :show.sync="showModal" @success="success"></form-modal>
     <success :show.sync="showSuccess"></success>
     <!-- <div class="reserve-btn" @click="showModal=true"></div> -->
@@ -18,8 +19,8 @@
       <landing class="section"></landing>
       <event class="section"></event>
       <reserve class="section"></reserve>
-      <f5 class="section"></f5>
       <sport-highlights class="section"></sport-highlights>
+      <f5 class="section"></f5>
       <!-- <div class="section">
         <button class="next" @click="$refs.fullpage.api.moveSectionDown()">Next</button>
         Section 1
@@ -98,12 +99,14 @@ export default {
       },
       showModal:false,
       showReserveBtn:true,
-      showSuccess:false
+      showSuccess:false,
+      index:0
     }
   },
   methods:{
     onLeave(origin, destination, direction){
       this.showReserveBtn = destination.index!=2
+      this.index = destination.index
     },
     toggleBGM(){
       if(this.bgMusic.paused){
