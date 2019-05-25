@@ -7,7 +7,7 @@
         <img src="../assets/imgs/page3/desc1-2.png" alt="" class="desc1-2">
       </div>
       <img src="../assets/imgs/page3/desc2.png" alt="" class="desc2">
-      <crm-form class="form" @success="success"></crm-form>
+      <crm-form type="page" class="form" @success="success"></crm-form>
       <success :show.sync="showSuccess" @update:show="onhide"></success>
     </div>
   </bg>

@@ -1,4 +1,5 @@
 <template>
+  <transition @leave="leave">
   <div class="mask" @click.self="maskClick" v-show="show">
     <transition
       name="custom-classes-transition"
@@ -13,6 +14,7 @@
       </div>
     </transition>
   </div>
+  </transition>
 </template>
 <script>
 export default {
@@ -30,6 +32,11 @@ export default {
   methods:{
     maskClick(){
       this.$emit('update:show',false)
+    },
+    leave(el, done){
+      setTimeout(() => {
+        done()
+      }, 300);
     }
   }
 }

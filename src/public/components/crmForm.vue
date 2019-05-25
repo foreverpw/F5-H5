@@ -1,5 +1,5 @@
 <template>
-  <div class="container" ref="form">
+  <div class="container" :class="[type]" ref="form">
     <div class="line">
       <div class="label">姓名</div>
       <input class="input" v-model="name" type="text" @focus="focus" @blur="blur">
@@ -52,6 +52,12 @@ export default {
         //alert('收')
       }
     }, false);
+  },
+  props:{
+    type:{
+      type: String,
+      default: "pop"
+    }
   },
   data(){
     return {
@@ -121,6 +127,16 @@ export default {
   // left:4.56rem;
   // top:-11rem;
 }
+.page{
+  .line{
+    border:0.04rem solid rgba(207, 192, 197, 1);
+    // border:none;
+    .label{
+      border-right:0.02rem solid rgba(207, 192, 197, 1);
+      // border-right:none;
+    }
+  }
+}
 .line{
   margin-bottom:0.9rem;
   height:2.96rem;
@@ -129,14 +145,16 @@ export default {
   align-items: center;
   background: white;
   position: relative;
+  border:0.08rem solid rgba(207, 192, 197, 1);
   .label{
     width:5.36rem;
     height:100%;
     line-height:2.96rem;
     padding-left:1.04rem;
-    background: #CFC0C5;
+    background: #EFE7E7;
     font-size:1.12rem;
     color:#53162D;
+    border-right:0.08rem solid rgba(207, 192, 197, 1);
   }
   .input{
     width:15.4rem;
