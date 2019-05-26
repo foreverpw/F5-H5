@@ -48,13 +48,13 @@ export default {
     height:100%;
   }
   .title{
-    margin-top:4.48rem;
+    margin-top:3.58rem;
     width:15.8rem;
   }
   .desc1-row{
     display: flex;
     align-items: flex-end;
-    margin-top: 1.76rem;
+    margin-top: 1.36rem;
     .desc1{
       width:17.24rem;
       height:1.36rem;
@@ -65,11 +65,11 @@ export default {
     }
   }
   .desc2{
-    margin-top:1.04rem;
+    margin-top:0.84rem;
     width:26.4rem;
     height:2.2rem;
   }
   .form{
-    margin-top:4.44rem;
+    margin-top:3.44rem;
   }
 </style>
