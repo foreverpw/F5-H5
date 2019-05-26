@@ -41,6 +41,10 @@
 <script>
 import {PROVINCE_CITY_MAP,CITY_AGENCIES_MAP} from '../common/constant'
 import service from '../services/service'
+// window.locationPromise = new Promise((r,j)=>{
+//   r({province:'江苏省',city:'苏州市'})
+// })
+
 export default {
   created(){
     const originHeight = document.documentElement.clientHeight || document.body.clientHeight;
@@ -58,6 +62,14 @@ export default {
       type: String,
       default: "pop"
     }
+  },
+  mounted(){
+    let vm = this
+    window.locationPromise.then(location=>{
+      vm.province = location.province
+      vm.cities = vm.PROVINCE_CITY_MAP[vm.province]
+      vm.city = location.city
+    })
   },
   data(){
     return {

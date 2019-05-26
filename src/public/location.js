@@ -3,8 +3,12 @@ import service from './services/service'
 function showPosition(position)
 {
   let {longitude,latitude} = position.coords
-  service.geocoderBaidu(longitude,latitude).then(data=>{
-    alert(data.formatted_address)
+  window.locationPromise = service.geocoderBaidu(longitude,latitude).then(data=>{
+    let {province,city} = result.addressComponent
+    return {
+      province,
+      city
+    }
   })
 }
 function errFn(position)
