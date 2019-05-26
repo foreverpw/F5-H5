@@ -40,12 +40,11 @@ export default {
   data(){
     return {
       video:null,
-      imgs:Object.values(gameImgs).map(i=>location.href+'/'+i)
+      imgs:Object.values(gameImgs).map(i=>location.origin+'/'+i)
     }
   },
   methods:{
     preview(url){
-      alert(url)
       window.jsSDKReady.then(({wx})=>{
         wx.previewImage({
           current: url, // 当前显示图片的http链接
