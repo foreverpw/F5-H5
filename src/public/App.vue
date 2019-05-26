@@ -1,6 +1,6 @@
 <template>
   <div class="app" v-show="!hideApp">
-    <img src="./assets/imgs/404.png" alt="" class="share-icon">
+    <img src="./assets/imgs/page5/lights/top/1.jpg" alt="" class="share-icon">
     <!-- <audio style="display:none; height: 0" ref="bgMusic" id="bg_music" preload="auto" loop="loop" src="./assets/bg.mp3"></audio> -->
     <div class="rotate-mask">
       请在竖屏模式下浏览
