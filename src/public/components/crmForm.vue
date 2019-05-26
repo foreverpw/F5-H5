@@ -122,7 +122,7 @@ export default {
       service.submitCrm({province,city,name,phone,shnumber}).then(data=>{
         this.$emit('success')
       }).catch(err=>{
-        this.$emit('success')
+        // this.$emit('success')
         this.$alert('提交出错')
       })
     }

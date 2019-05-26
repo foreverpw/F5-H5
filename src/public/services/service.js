@@ -5,6 +5,7 @@ import jsonp from 'jsonp'
 
 // Vue.prototype.$http = axios;
 axios.defaults.baseURL = config.serviceDomain;
+axios.defaults.timeout = 5000;
 
 axios.interceptors.request.use(function (conf) {
   // Do something before request is sent

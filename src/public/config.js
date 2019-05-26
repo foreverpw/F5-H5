@@ -3,8 +3,8 @@ const config = {
   // serviceDomain:'https://hupu.ksspark.cn:12200'
 }
 if(process.env.ENV=='test'){
-  // config.serviceDomain = 'http://192.168.3.130:12200'
-  config.serviceDomain = 'http://192.168.1.4:12200'
+  config.serviceDomain = 'http://192.168.11.4:12200'
+  // config.serviceDomain = 'http://192.168.1.4:12200'
 }
 
 export default config
