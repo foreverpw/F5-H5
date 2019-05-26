@@ -143,6 +143,7 @@ export default {
     right:0;
     width:10.6rem;
     height:9.64rem;
+    transform: scale(1);
     z-index: 999;
   }
   .cards{
