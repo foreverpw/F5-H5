@@ -49,7 +49,7 @@ import SportHighlights from './pages/sportHighlights'
 import FormModal from './components/formModal'
 import Success from './components/successModal/index'
 import bgmUrl from './assets/bg.mp3'
-import firstBG from './assets/imgs/bgs/bg1.png'
+import firstBG from './assets/imgs/bgs/bg1.jpg'
 
 window.options = {
   licenseKey:'asdf',

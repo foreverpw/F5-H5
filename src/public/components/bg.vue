@@ -31,15 +31,15 @@ export default {
   .bg{
     height:100%;
     width:100%;
-    background-image: url(../assets/imgs/bgs/bg.png);
+    background-image: url(../assets/imgs/bgs/bg.jpg);
     background-size: cover;
     background-position: center center;
     position: relative;
     &.bg1{
-      background-image: url(../assets/imgs/bgs/bg1.png);
+      background-image: url(../assets/imgs/bgs/bg1.jpg);
     }
     &.bg3{
-      background-image: url(../assets/imgs/bgs/bg3.png);
+      background-image: url(../assets/imgs/bgs/bg3.jpg);
     }
     .content{
       position: absolute;
