@@ -52,7 +52,7 @@ COPY . /src
 WORKDIR /src
 
 RUN cnpm i 
-RUN npm run build:test
+RUN npm run build
 
 COPY nginx.conf /etc/nginx/nginx.conf
 

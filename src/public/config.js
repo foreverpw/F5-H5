@@ -1,5 +1,5 @@
 const config = {
-  serviceDomain:'https://api.dingnuo.ai'
+  serviceDomain:'http://47.102.197.119:12200'
 }
 if(process.env.ENV=='test'){
   // config.serviceDomain = 'http://192.168.3.130:12200'
