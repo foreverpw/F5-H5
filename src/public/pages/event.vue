@@ -182,12 +182,12 @@ export default {
         top:1.5rem;
         left:0;
         height:calc(100% - 1.5rem);
-        z-index: 99;
+        z-index: 9;
         &.kol3{
           top:2rem;
           height:calc(100% - 2rem);
           left:-1rem;
-          z-index: 99;
+          z-index: 9;
         }
       }
       .center-layout{
@@ -260,6 +260,8 @@ export default {
         align-items: flex-start;
         padding:1rem;
         padding-bottom:0.88rem;
+        transform: sacle(1);
+        opacity: 0.99;
         .icon{
           width:3.08rem;
           height:5.04rem;

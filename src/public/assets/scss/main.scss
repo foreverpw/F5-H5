@@ -64,9 +64,9 @@ body .swiper-button-prev{
   height:3.49rem;
   left:0.48rem;
   margin-top:0;
-  transform: translateY(-50%);
+  transform: translateY(-50%) scale(1);
   background-image: url(../imgs/page5/lights/pre.png);
-  z-index: 999;
+  z-index: 9999;
 }
 
 body .swiper-button-next{
@@ -74,7 +74,7 @@ body .swiper-button-next{
   height:3.49rem;
   right:0.48rem;
   margin-top:0;
-  transform: translateY(-50%);
+  transform: translateY(-50%) scale(1);
   background-image: url(../imgs/page5/lights/next.png);
-  z-index: 999;
+  z-index: 9999;
 }
