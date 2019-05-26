@@ -21,12 +21,9 @@
             <div class="detail-container" v-show="state==1">
               <img src="../assets/imgs/page2/cs-kol.png" alt="" class="kol kol1">
               <div class="center-layout">
-                <div class="title">颜值实力双C位
-    路人王“井柏然”</div>
+                <div class="title">颜值实力双C位&#10;路人王“井柏然”</div>
               <div class="name">张智杨</div>
-              <div class="quote">我是路人王“十冠王”&nbsp;&nbsp;
-    张智杨，够胆你就来，
-    我在现场等你！</div>
+              <div class="quote">我是路人王“十冠王”&nbsp;&nbsp;&#10;张智杨，够胆你就来，&#10;我在现场等你！</div>
               </div>
               <div class="location">
                 <img src="../assets/imgs/page2/location.png" alt="" class="icon">
@@ -49,11 +46,9 @@
               <img src="../assets/imgs/page2/cq-kol.png" alt="" class="kol kol1">
               <div class="center-layout">
                 <div class="title">接球灵魂继承者
-    “十万先生”</div>
+    &#10;“十万先生”</div>
               <div class="name">孟亚东</div>
-              <div class="quote">“大魔王”平常心前来
-                踢馆！球场要用实力说
-                话，不服就来战！</div>
+              <div class="quote">“大魔王”平常心前来&#10;踢馆！球场要用实力说&#10;话，不服就来战！</div>
               </div>
               <div class="location">
                 <img src="../assets/imgs/page2/location.png" alt="" class="icon">
@@ -75,12 +70,9 @@
             <div class="detail-container" v-show="state==3">
               <img src="../assets/imgs/page2/gz-kol.png" alt="" class="kol kol3">
               <div class="center-layout">
-                <div class="title">飘逸灵动技巧派
-    “洋葱哥”</div>
+                <div class="title">飘逸灵动技巧派&#10;“洋葱哥”</div>
               <div class="name">董康潮</div>
-              <div class="quote">“洋葱哥”董康潮参上！
-                你的反应和我的过人哪个
-                更快？来一较高下吧！</div>
+              <div class="quote">“洋葱哥”董康潮参上！&#10;你的反应和我的过人哪个&#10;更快？来一较高下吧！</div>
               </div>
               <div class="location">
                 <img src="../assets/imgs/page2/location.png" alt="" class="icon">
