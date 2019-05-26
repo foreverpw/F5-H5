@@ -49,8 +49,8 @@ import 'video.js/dist/video-js.css'
 
 Vue.config.productionTip = false
 
-require('./weixin')
-// require('./location.js')
+// require('./weixin')
+require('./location.js')
 
 new Vue({
   el: '#app',
