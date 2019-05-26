@@ -6,7 +6,7 @@
       <div class="img-list">
         <div v-for="(img,i) in imgs" :key="i" class="img" @click="preview(img)">
           <div class="info">历史赛事</div>
-          <img :src="img" alt="">
+          <img v-lazy="img" alt="">
         </div>
       </div>
       <div class="video-container">

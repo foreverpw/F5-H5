@@ -5,6 +5,11 @@ import 'animate.css'
 // import VueCookie from 'vue-cookie';
 // Vue.use(VueCookie);
 
+import VueLazyload from 'vue-lazyload'
+Vue.use(VueLazyload,{
+  preLoad: 2
+})
+
 import Alert from './components/alert/main.js'
 Vue.prototype.$alert = Alert
 
