@@ -40,7 +40,7 @@ export default {
   data(){
     return {
       video:null,
-      imgs:Object.values(gameImgs).map(i=>location.href+i)
+      imgs:Object.values(gameImgs)//.map(i=>location.href+i)
     }
   },
   methods:{
