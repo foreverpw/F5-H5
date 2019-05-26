@@ -2,8 +2,10 @@
   <bg :page="4">
     <div class="main">
       <img src="../assets/imgs/page4/title.png" alt="" class="title">
+      <img src="../assets/imgs/page4/desc.png" alt="" class="desc">
       <div class="img-list">
         <div v-for="(img,i) in imgs" :key="i" class="img" @click="preview(img)">
+          <div class="info">历史赛事</div>
           <img :src="img" alt="">
         </div>
       </div>
@@ -59,27 +61,48 @@ export default {
     // flex-direction: column;
     // align-items: flex-start;
     .title{
-      margin-top:3.08rem;
+      margin-top:2.48rem;
       width:11.56rem;
       height:2.72rem;
       margin-left: 1.32rem;
       display: block;
     }
+    .desc{
+      margin-top:1.12rem;
+      margin-left: 1.56rem;
+      width:25.64rem;
+    }
     .img-list{
-      margin-top:2.24rem;
+      margin-top:1.34rem;
       margin-left:0.76rem;
+      display: flex;
+      flex-wrap: wrap;
       .img{
         display: inline-block;
         width: 13.99rem;
-        height:8.66rem;
+        height:8.26rem;
         margin-right:0.44rem;
         margin-bottom: 0.36rem;
         padding:0.16rem;
         background:linear-gradient(62deg,rgba(28,24,216,1),rgba(245,27,109,1));
         overflow: hidden;
+        position: relative;
         img{
           width: 100%;
           height:100%;
+        }
+        .info{
+          position: absolute;
+          background:rgba(12,11,16,1);
+          opacity: 0.77;
+          font-size:0.96rem;
+          color: #fff;
+          height:2.2rem;
+          line-height:2.2rem;
+          padding-left:1.32rem;
+          width:calc(100% - 0.32rem);
+          left:0.16rem;
+          bottom:0.16rem;
         }
       }
     }

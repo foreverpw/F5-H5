@@ -1,25 +1,23 @@
 <template>
-  <div class="photos">
+  <div class="features">
     <swiper :options="swiperOptionTop" class="gallery" ref="swiperTop">
-      <swiper-slide class="slide-1"><img src="../assets/imgs/image.png" alt=""></swiper-slide>
-      <swiper-slide class="slide-1"><img src="../assets/imgs/image.png" alt=""></swiper-slide>
-      <swiper-slide class="slide-1"><img src="../assets/imgs/image.png" alt=""></swiper-slide>
-      <swiper-slide class="slide-1"><img src="../assets/imgs/image.png" alt=""></swiper-slide>
-      <swiper-slide class="slide-1"><img src="../assets/imgs/image.png" alt=""></swiper-slide>
-      <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
-      <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
+      <swiper-slide class="slide-1" v-for="img in topUrls" :key="img">
+        <img :src="img" alt="">
+      </swiper-slide>
+      <div class="swiper-button-next" slot="button-next"></div>
+      <div class="swiper-button-prev" slot="button-prev"></div>
     </swiper>
     <swiper :options="swiperOptionThumbs" class="thumbs" ref="swiperThumbs">
-      <swiper-slide class="slide-1"><img src="../assets/imgs/image.png" alt=""></swiper-slide>
-      <swiper-slide class="slide-1"><img src="../assets/imgs/image.png" alt=""></swiper-slide>
-      <swiper-slide class="slide-1"><img src="../assets/imgs/image.png" alt=""></swiper-slide>
-      <swiper-slide class="slide-1"><img src="../assets/imgs/image.png" alt=""></swiper-slide>
-      <swiper-slide class="slide-1"><img src="../assets/imgs/image.png" alt=""></swiper-slide>
+      <swiper-slide class="slide-1" v-for="img in bottomUrls" :key="img">
+        <img :src="img" alt="">
+      </swiper-slide>
     </swiper>
   </div>
 </template>
 <script>
 import CrmForm from '../components/crmForm'
+import topUrls from '../assets/imgs/page5/cars/top/*.jpg'
+import bottomUrls from '../assets/imgs/page5/cars/bottom/*.png'
 export default {
   components:{
     CrmForm
@@ -34,16 +32,22 @@ export default {
   },
   data(){
     return {
+      topUrls,
+      bottomUrls,
       swiperOptionTop: {
         spaceBetween: 10,
+        loop: true,
+        loopedSlides: Object.keys(topUrls).length,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
         }
       },
       swiperOptionThumbs: {
-        spaceBetween: 10,
-        centeredSlides: true,
+        // spaceBetween: 10,
+        // centeredSlides: true,
+        loop: true,
+        loopedSlides: Object.keys(topUrls).length,
         slidesPerView: 'auto',
         touchRatio: 0.2,
         slideToClickedSlide: true
@@ -53,31 +57,33 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .photos{
-    width:27rem;
-    height:40rem;
+  .features{
+    width:100%;
     .gallery {
-      height: 75%!important;
+      height: 21.68rem;
       width: 100%;
+      box-shadow:0rem 1rem 2rem 0rem rgba(0, 0, 0, 0.35);
       .slide-1 {
         display: flex;
         align-items: center;
         justify-content: center;
         img{
           height: 100%;
-          // width: 100%;
+          width: 100%;
         }
       }
     }
     .thumbs{
-      height: 25%!important;
       box-sizing: border-box;
-      padding: 10px 0;
+      padding: 1.68rem 0;
+      margin-right: -0.52rem;
       .swiper-slide {
-        width: 25%;
-        height: 100%;
+        width: 20%;
+        padding-right:0.52rem;
+        // height: 4.3rem;
         opacity: 0.4;
         img{
+          width:100%;
           height:100%;
         }
       }

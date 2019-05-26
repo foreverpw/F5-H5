@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="app" v-show="!hideApp">
     <img src="./assets/imgs/404.png" alt="" class="share-icon">
     <!-- <audio style="display:none; height: 0" ref="bgMusic" id="bg_music" preload="auto" loop="loop" src="./assets/bg.mp3"></audio> -->
     <div class="rotate-mask">
@@ -49,6 +49,7 @@ import SportHighlights from './pages/sportHighlights'
 import FormModal from './components/formModal'
 import Success from './components/successModal/index'
 import bgmUrl from './assets/bg.mp3'
+import firstBG from './assets/imgs/bgs/bg1.png'
 
 window.options = {
   licenseKey:'asdf',
@@ -79,6 +80,11 @@ export default {
          window.fp.api.reBuild()
       }, 100);
     }, false);
+    let bg = new Image()
+    bg.onload = () => {
+      this.hideApp = false
+    }
+    bg.src = firstBG
     // this.$refs.bgMusic.play()
     // this.bgMusic = new Audio(bgmUrl);
     // this.bgMusic.loop = true;
@@ -95,6 +101,7 @@ export default {
   },
   data(){
     return{
+      hideApp:true,
       options:{
         licenseKey:'asdf',
         autoScrolling:true,

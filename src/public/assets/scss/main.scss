@@ -44,8 +44,37 @@ body{
   top:50%!important;
   transform: translateX(-50%) translateY(-50%);
   border-radius: 100%!important;
-  width: 1.6em!important;
-  height: 1.6em!important;
-  line-height: 1.6em!important;
-  background-color: rgba(111, 111, 111, 0.6)!important;
+  width: 4.88rem!important;
+  height: 4.88rem!important;
+  line-height: 4.88rem!important;
+  background-color: rgba(0,0,0, 0.38)!important;
+  position: relative;
+  .vjs-icon-placeholder::before{
+    content:""!important;
+    width:1.92rem;
+    height:2.2rem;
+    background: url(../imgs/page4/play.png);
+    background-size: cover;
+    margin-left:0.1rem;
+  }
+}
+
+body .swiper-button-prev{
+  width:2.03rem;
+  height:3.49rem;
+  left:0.48rem;
+  margin-top:0;
+  transform: translateY(-50%);
+  background-image: url(../imgs/page5/lights/pre.png);
+  z-index: 999;
+}
+
+body .swiper-button-next{
+  width:2.03rem;
+  height:3.49rem;
+  right:0.48rem;
+  margin-top:0;
+  transform: translateY(-50%);
+  background-image: url(../imgs/page5/lights/next.png);
+  z-index: 999;
 }

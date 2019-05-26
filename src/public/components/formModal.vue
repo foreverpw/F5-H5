@@ -7,7 +7,7 @@
         leave-active-class="animated zoomOut faster"
       >
         <div class="modal" v-show="show">
-          <img src="" alt="" class="close">
+          <img src="../assets/imgs/page3/close.png" @click="maskClick" alt="" class="close">
           <span class="title">预约试驾</span>
           <span class="desc">预约到店试驾即可获赠<span class="red">精美礼品</span></span>
           <span class="desc">购车至高享<span class="red">14500</span>元综合补贴</span>
