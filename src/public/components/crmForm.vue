@@ -87,6 +87,7 @@ export default {
         vm.province = province
         vm.cities = vm.PROVINCE_CITY_MAP[vm.province]
         vm.city = city
+        vm.agencies = CITY_AGENCIES_MAP[vm.city]
       }
     })
   },
