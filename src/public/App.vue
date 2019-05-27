@@ -17,7 +17,7 @@
     <!-- <div class="music-btn" @click="toggleBGM"></div> -->
     <full-page ref="fullpage" :options="options">
       <landing class="section"></landing>
-      <event class="section"></event>
+      <event ref="event" class="section"></event>
       <reserve class="section"></reserve>
       <sport-highlights class="section"></sport-highlights>
       <f5 class="section"></f5>
@@ -119,6 +119,12 @@ export default {
     onLeave(origin, destination, direction){
       this.showReserveBtn = destination.index!=2
       this.index = destination.index
+      if(destination.index==1){
+        this.$refs.event.initInterval()
+      }
+      if(origin.index==1){
+        this.$refs.event.cancelInterval()
+      }
     },
     toggleBGM(){
       if(this.bgMusic.paused){

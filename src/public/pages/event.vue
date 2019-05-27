@@ -99,7 +99,7 @@ export default {
     bg
   },
   mounted() {
-    this.initInterval()
+    // this.initInterval()
   },
   computed:{
     headerActiveClass(){
@@ -119,9 +119,12 @@ export default {
         this.state = this.state%3+1
       }, 2000);
     },
+    cancelInterval(){
+      clearInterval(this.intvl)
+    },
     changeState(state){
       this.state=state
-      clearInterval(this.intvl)
+      this.cancelInterval()
       // this.initInterval()
     }
   }
