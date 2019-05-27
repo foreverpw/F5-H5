@@ -45,7 +45,7 @@
             <div class="detail-container" v-show="state==2">
               <img src="../assets/imgs/page2/cq-kol.png" alt="" class="kol kol1">
               <div class="center-layout">
-                <div class="title">接球灵魂继承者
+                <div class="title">街球灵魂继承者
     &#10;“十万先生”</div>
               <div class="name">孟亚东</div>
               <div class="quote">“大魔王”平常心前来&#10;踢馆！球场要用实力说&#10;话，不服就来战！</div>
