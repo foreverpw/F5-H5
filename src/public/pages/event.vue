@@ -124,7 +124,7 @@ export default {
     },
     changeState(state){
       this.state=state
-      this.cancelInterval()
+      // this.cancelInterval()
       // this.initInterval()
     }
   }
