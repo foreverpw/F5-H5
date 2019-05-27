@@ -66,8 +66,11 @@ export default {
         spaceBetween: 10,
         loop: true,
         loopedSlides: Object.keys(topUrls).length,
-        autoplay: true,
-        delay: 2000,
+        autoplay: {
+          delay: 2000,
+          stopOnLastSlide: false,
+          disableOnInteraction: false,
+        },
         // watchSlidesVisibility: true,
         navigation: {
           nextEl: '.swiper-button-next',
