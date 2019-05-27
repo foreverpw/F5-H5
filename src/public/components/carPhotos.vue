@@ -38,6 +38,8 @@ export default {
         spaceBetween: 10,
         loop: true,
         loopedSlides: Object.keys(topUrls).length,
+        autoplay: true,
+        delay: 2000,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'

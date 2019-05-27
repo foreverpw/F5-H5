@@ -7,9 +7,9 @@
       <div class="cards">
         <div class="header" :class="[headerActiveClass]">
           <div class="fg">
-            <div class="item" :class="{active:state==1}" @click="state=1">长沙</div>
-            <div class="item" :class="{active:state==2}" @click="state=2">重庆</div>
-            <div class="item" :class="{active:state==3}" @click="state=3">广州</div>
+            <div class="item" :class="{active:state==1}" @click="changeState(1)">长沙</div>
+            <div class="item" :class="{active:state==2}" @click="changeState(2)">重庆</div>
+            <div class="item" :class="{active:state==3}" @click="changeState(3)">广州</div>
           </div>
         </div>
         <div class="detail">
@@ -99,6 +99,7 @@ export default {
     bg
   },
   mounted() {
+    this.initInterval()
   },
   computed:{
     headerActiveClass(){
@@ -107,10 +108,22 @@ export default {
   },
   data(){
     return {
-      state:1
+      state:1,
+      intvl:null
     }
   },
   methods:{
+    initInterval(){
+      clearInterval(this.intvl)
+      this.intvl = setInterval(() => {
+        this.state = this.state%3+1
+      }, 2000);
+    },
+    changeState(state){
+      this.state=state
+      clearInterval(this.intvl)
+      // this.initInterval()
+    }
   }
 }
 </script>

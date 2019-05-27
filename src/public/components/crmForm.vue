@@ -41,10 +41,23 @@
 <script>
 import {PROVINCE_CITY_MAP,CITY_AGENCIES_MAP} from '../common/constant'
 import service from '../services/service'
-// window.locationPromise = new Promise((r,j)=>{
-//   r({province:'江苏省',city:'苏州市'})
-// })
-
+window.locationPromise = new Promise((r,j)=>{
+  r({province:'上海市',city:'普陀区'})
+})
+function locationValidate(location){
+  let {province,city} = location
+  let cities = PROVINCE_CITY_MAP[province]
+  if(!cities){
+    return false
+  }else{
+    if(cities.indexOf(city)===-1){
+      return false
+    }else{
+      return true
+    }
+  }
+}
+const ps = ['上海市','北京市','天津市','重庆市']
 export default {
   created(){
     const originHeight = document.documentElement.clientHeight || document.body.clientHeight;
@@ -66,9 +79,15 @@ export default {
   mounted(){
     let vm = this
     window.locationPromise.then(location=>{
-      vm.province = location.province
-      vm.cities = vm.PROVINCE_CITY_MAP[vm.province]
-      vm.city = location.city
+      let {province,city} = location
+      if(ps.indexOf(province)!==-1){
+        city = province
+      }
+      if(locationValidate({province,city})){
+        vm.province = province
+        vm.cities = vm.PROVINCE_CITY_MAP[vm.province]
+        vm.city = city
+      }
     })
   },
   data(){
