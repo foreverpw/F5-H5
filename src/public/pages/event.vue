@@ -28,7 +28,7 @@
               <div class="location">
                 <img src="../assets/imgs/page2/location.png" alt="" class="icon">
                 <div class="info">
-                  <div class="top" @click="openMap(113.009834,28.193423,'长沙乐运三秒区篮球场')">
+                  <div class="top" @click="openMap(113.009834,28.193423,'长沙乐运三秒区篮球场','长沙市芙蓉区曙光北路119号 曙光798城市体验馆2号栋')">
                     <div class="date">6.8</div>
                     长沙乐运三秒区篮球场
                   </div>
@@ -54,7 +54,7 @@
               <div class="location">
                 <img src="../assets/imgs/page2/location.png" alt="" class="icon">
                 <div class="info">
-                  <div class="top" @click="openMap(106.515902,29.672293,'重庆Elite篮球中心')">
+                  <div class="top" @click="openMap(106.515902,29.672293,'重庆Elite篮球中心','重庆市渝北区北部区金渝大道28号辅助厂房')">
                     <div class="date">6.13</div>
                     重庆Elite篮球中心
                   </div>
@@ -79,7 +79,7 @@
               <div class="location">
                 <img src="../assets/imgs/page2/location.png" alt="" class="icon">
                 <div class="info">
-                  <div class="top" @click="openMap(113.348537,23.178798,'广州L2球馆')">
+                  <div class="top" @click="openMap(113.348537,23.178798,'广州L2球馆','广州市天河区天河客运站旁 元岗横路18号（L2体育会天河旗舰店）')">
                     <div class="date">6.22</div>
                     广州L2球馆
                   </div>
@@ -97,6 +97,7 @@
 <script>
 // import videojs from 'video.js'
 import bg from '../components/bg'
+import gcoord from 'gcoord'
 export default {
   components:{
     bg
@@ -130,16 +131,20 @@ export default {
       // this.cancelInterval()
       // this.initInterval()
     },
-    openMap(longitude,latitude,name){
-      alert(`longitude:${longitude},latitude:${latitude},name:${name}`)
+    openMap(longitude,latitude,name,desc){
       window.jsSDKReady.then(({wx})=>{
+        var result = gcoord.transform(
+          [longitude, latitude],    // 经纬度坐标
+          gcoord.BD09,               // 当前坐标系
+          gcoord.WGS84                 // 目标坐标系
+        );
         wx.openLocation({
-          latitude, // 纬度，浮点数，范围为90 ~ -90
-          longitude, // 经度，浮点数，范围为180 ~ -180。
+          latitude:result[1], // 纬度，浮点数，范围为90 ~ -90
+          longitude:result[0], // 经度，浮点数，范围为180 ~ -180。
           name, // 位置名
-          address: 'xxxxx', // 地址详情说明
+          address: desc, // 地址详情说明
           // scale: 1, // 地图缩放级别,整形值,范围从1~28。默认为最大
-          infoUrl: 'http://www.baidu.com' // 在查看位置界面底部显示的超链接,可点击跳转
+          // infoUrl: 'http://www.baidu.com' // 在查看位置界面底部显示的超链接,可点击跳转
         });
       })
     }
