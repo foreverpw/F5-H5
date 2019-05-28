@@ -4,7 +4,7 @@ import service from './services/service'
 window.jsSDKReady = service.getJsSDKSignature().then(signData=>{
   const config = Object.assign(signData,{
     debug:true,
-    jsApiList:['updateAppMessageShareData','updateTimelineShareData','getLocation']
+    jsApiList:['updateAppMessageShareData','updateTimelineShareData','getLocation','openLocation']
   })
   
   window.wx = new WechatJSSDK(config);
