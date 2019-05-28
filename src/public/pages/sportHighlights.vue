@@ -3,12 +3,6 @@
     <div class="main">
       <img src="../assets/imgs/page4/title.png" alt="" class="title">
       <img src="../assets/imgs/page4/desc.png" alt="" class="desc">
-      <div class="img-list">
-        <div v-for="(img,i) in imgs" :key="i" class="img" @click="preview(img)">
-          <div class="info">历史赛事</div>
-          <img v-lazy="img" alt="">
-        </div>
-      </div>
       <div class="video-container">
         <!-- <fa class="icon" v-if="!playing()" icon="play"></fa> -->
         <video preload="auto" class="video video-js" id="game_video" ref="video" controls playsinline poster="../assets/videos/fp.jpeg">
@@ -19,6 +13,12 @@
                   :options="playerOptions"
                   :playsinline="true">
         </video-player> -->
+      </div>
+      <div class="img-list">
+        <div v-for="(img,i) in imgs" :key="i" class="img" @click="preview(img)">
+          <div class="info">历史赛事</div>
+          <img v-lazy="img" alt="">
+        </div>
       </div>
     </div>
   </bg>
@@ -73,7 +73,8 @@ export default {
       width:25.64rem;
     }
     .img-list{
-      margin-top:1.34rem;
+      margin-top:0.4rem;
+      // margin-top:1.34rem;
       margin-left:0.76rem;
       display: flex;
       flex-wrap: wrap;
@@ -107,7 +108,8 @@ export default {
       }
     }
     .video-container{  //128 72
-      margin-top:0.4rem;
+      margin-top:1.34rem;
+      // margin-top:0.4rem;
       width: 28.28rem;
       height: 12.76rem;
       margin-left: 0.84rem;
