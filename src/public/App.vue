@@ -1,7 +1,7 @@
 <template>
   <div class="app" v-show="!hideApp">
     <img src="./assets/imgs/0.jpg" alt="" class="share-icon">
-    <!-- <audio style="display:none; height: 0" ref="bgMusic" id="bg_music" preload="auto" loop="loop" src="./assets/bg.mp3"></audio> -->
+    <!-- <audio style="display:none; height: 0" ref="bgMusic" id="bg_music" preload="auto" loop="loop"></audio> -->
     <div class="rotate-mask">
       请在竖屏模式下浏览
     </div>
@@ -86,16 +86,18 @@ export default {
     }
     bg.src = firstBG
     // this.$refs.bgMusic.play()
-    // this.bgMusic = new Audio(bgmUrl);
-    // this.bgMusic.loop = true;
-    // setTimeout(() => {
-    //   if(this.bgMusic.paused){
-    //     // this.bgMusic.play();
-    //   }
-    // }, 500);
-    // document.addEventListener("WeixinJSBridgeReady", ()=>{  
-    //   // this.bgMusic.play();  
-    // }, false);
+    this.bgMusic = new Audio(bgmUrl);
+    this.bgMusic.loop = true;
+    setTimeout(() => {
+      if(this.bgMusic.paused){
+        this.bgMusic.play();
+      }
+    }, 500);
+    document.addEventListener("WeixinJSBridgeReady", ()=>{  
+      if(this.bgMusic.paused){
+        this.bgMusic.play();  
+      }
+    }, false);
   },
   computed: {
   },
