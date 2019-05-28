@@ -132,12 +132,13 @@ export default {
       // this.initInterval()
     },
     openMap(longitude,latitude,name,desc){
+      var result = gcoord.transform(
+        [longitude, latitude],    // 经纬度坐标
+        gcoord.BD09,               // 当前坐标系
+        gcoord.GCJ02                 // 目标坐标系
+      );
+      console.log(result)
       window.jsSDKReady.then(({wx})=>{
-        var result = gcoord.transform(
-          [longitude, latitude],    // 经纬度坐标
-          gcoord.BD09,               // 当前坐标系
-          gcoord.WGS84                 // 目标坐标系
-        );
         wx.openLocation({
           latitude:result[1], // 纬度，浮点数，范围为90 ~ -90
           longitude:result[0], // 经度，浮点数，范围为180 ~ -180。
