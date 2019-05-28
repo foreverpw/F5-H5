@@ -41,6 +41,8 @@
 <script>
 import {PROVINCE_CITY_MAP,CITY_AGENCIES_MAP} from '../common/constant'
 import service from '../services/service'
+import utils from '../common/utils'
+
 window.locationPromise = new Promise((r,j)=>{
   r({province:'上海市',city:'普陀区'})
 })
@@ -128,6 +130,9 @@ export default {
       }
       if(!this.phone){
         return this.$alert('请填写手机')
+      }
+      if(!utils.isPoneAvailable(this.phone)){
+        return this.$alert('手机格式不正确')
       }
       if(!this.province){
         return this.$alert('请选择省份')
