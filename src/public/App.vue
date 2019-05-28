@@ -9,7 +9,7 @@
       <img src="./assets/imgs/logo.png" alt="" class="logo">
       <img src="./assets/imgs/reserve.png" alt="" v-show="showReserveBtn" class="reserve-btn" @click="showModal=true">
     </div>
-    <img src="./assets/imgs/icons/scroll.png" alt="" @click="$refs.fullpage.api.moveSectionUp()" 
+    <img src="./assets/imgs/icons/scroll.png" alt="" @click="$refs.fullpage.api.moveSectionDown()" 
     v-show="index<4" class="scroll-icon animated flash infinite">
     <form-modal :show.sync="showModal" @success="success"></form-modal>
     <success :show.sync="showSuccess"></success>
@@ -86,16 +86,16 @@ export default {
     }
     bg.src = firstBG
     // this.$refs.bgMusic.play()
-    this.bgMusic = new Audio(bgmUrl);
-    this.bgMusic.loop = true;
+    window.bgMusic = new Audio(bgmUrl);
+    window.bgMusic.loop = true;
     setTimeout(() => {
-      if(this.bgMusic.paused){
-        this.bgMusic.play();
+      if(window.bgMusic.paused){
+        window.bgMusic.play();
       }
     }, 500);
     document.addEventListener("WeixinJSBridgeReady", ()=>{  
-      if(this.bgMusic.paused){
-        this.bgMusic.play();  
+      if(window.bgMusic.paused){
+        window.bgMusic.play();  
       }
     }, false);
   },
@@ -202,8 +202,13 @@ export default {
     margin:0;
     display: block;
   }
-  @media screen and (orientation:landscape) {
-    // CSS applied when the device is in landscape mode
+  // @media screen and (orientation:landscape) {
+  //   // CSS applied when the device is in landscape mode
+  //   .rotate-mask{
+  //     display: flex;
+  //   }
+  // }
+  @media screen and (min-aspect-ratio: 13/9) { /* landscape styles here */
     .rotate-mask{
       display: flex;
     }

@@ -63,14 +63,14 @@ const ps = ['上海市','北京市','天津市','重庆市']
 export default {
   created(){
     const originHeight = document.documentElement.clientHeight || document.body.clientHeight;
-    window.addEventListener('resize', function() {
-      const resizeHeight = document.documentElement.clientHeight || document.body.clientHeight;
-      if (resizeHeight < originHeight) {
-        //alert('弹')
-      } else {
-        //alert('收')
-      }
-    }, false);
+    // window.addEventListener('resize', function() {
+    //   const resizeHeight = document.documentElement.clientHeight || document.body.clientHeight;
+    //   if (resizeHeight < originHeight) {
+    //     //alert('弹')
+    //   } else {
+    //     //alert('收')
+    //   }
+    // }, false);
   },
   props:{
     type:{

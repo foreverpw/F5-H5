@@ -1,6 +1,6 @@
 <template>
   <bg :page="4">
-    <div class="main">
+    <div class="main" :style="{height:height}">
       <img src="../assets/imgs/page4/title.png" alt="" class="title">
       <img src="../assets/imgs/page4/desc.png" alt="" class="desc">
       <div class="video-container">
@@ -35,10 +35,27 @@ export default {
   mounted() {
     videojsPromise.then(videojs=>{
       this.video = videojs('game_video')
+      this.video.on("play", function (e) {
+        window.bgMusic.pause()
+      });
     })
+    let vm = this
+    function fn() {
+      const width = document.documentElement.clientWidth || document.body.clientWidth;
+      const height = document.documentElement.clientHeight || document.body.clientHeight;
+      let ratio = height/width
+      if(ratio>=1.6){
+        vm.height='44.2rem'
+      }else{
+        vm.height='100%'
+      }
+    };
+    window.addEventListener('resize', fn, false);
+    document.addEventListener("DOMContentLoaded", fn, false);
   },
   data(){
     return {
+      height:'100%',
       video:null,
       imgs:Object.values(gameImgs).map(i=>location.origin+'/'+i)
     }
@@ -60,20 +77,24 @@ export default {
     // display: flex;
     // flex-direction: column;
     // align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     .title{
-      margin-top:2.48rem;
+      // margin-top:2.48rem;
+      margin-top:1.6rem;
       width:11.56rem;
       height:2.72rem;
       margin-left: 1.32rem;
       display: block;
     }
     .desc{
-      margin-top:1.12rem;
+      margin-top:0.56rem;
       margin-left: 1.56rem;
       width:25.64rem;
     }
     .img-list{
-      margin-top:0.4rem;
+      margin-top:0.2rem;
       // margin-top:1.34rem;
       margin-left:0.76rem;
       display: flex;
@@ -108,7 +129,7 @@ export default {
       }
     }
     .video-container{  //128 72
-      margin-top:1.34rem;
+      margin-top:0.67rem;
       // margin-top:0.4rem;
       width: 28.28rem;
       height: 12.76rem;
