@@ -3,7 +3,7 @@ import service from './services/service'
 
 window.jsSDKReady = service.getJsSDKSignature().then(signData=>{
   const config = Object.assign(signData,{
-    // debug:true,
+    debug:true,
     jsApiList:['updateAppMessageShareData','updateTimelineShareData','getLocation']
   })
   

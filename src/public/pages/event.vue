@@ -131,6 +131,7 @@ export default {
       // this.initInterval()
     },
     openMap(longitude,latitude,name){
+      alert(`longitude:${longitude},latitude:${latitude},name:${name}`)
       window.jsSDKReady.then(({wx})=>{
         wx.openLocation({
           latitude, // 纬度，浮点数，范围为90 ~ -90
