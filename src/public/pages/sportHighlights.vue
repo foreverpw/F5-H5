@@ -35,8 +35,17 @@ export default {
   mounted() {
     videojsPromise.then(videojs=>{
       this.video = videojs('game_video')
+      let originPaused = false
       this.video.on("play", function (e) {
+        originPaused = window.bgMusic.paused
         window.bgMusic.pause()
+        window.music.paused = window.bgMusic.paused
+      });
+      this.video.on("pause", function (e) {
+        if(!originPaused){
+          window.bgMusic.play()
+          window.music.paused = window.bgMusic.paused
+        }
       });
     })
     let vm = this

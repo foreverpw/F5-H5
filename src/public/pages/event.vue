@@ -46,8 +46,7 @@
             <div class="detail-container" v-show="state==2">
               <img src="../assets/imgs/page2/cq-kol.png" alt="" class="kol kol1">
               <div class="center-layout">
-                <div class="title">街球灵魂继承者
-    &#10;“十万先生”</div>
+                <div class="title">街球灵魂继承者&#10;“十万先生”</div>
               <div class="name">孟亚东</div>
               <div class="quote">“大魔王”平常心前来&#10;踢馆！球场要用实力说&#10;话，不服就来战！</div>
               </div>
@@ -161,12 +160,12 @@ export default {
     height:100%;
   }
   .h-title{
-    margin-top:2.44rem;
+    margin-top:4.57vh;
     width:24.64rem;
     height:5.8rem;
   }
   .desc{
-    margin-top:0.8rem;
+    margin-top:1.6vh;
     width:26.92rem;
     height:2.72rem;
     font-size:1.12rem;
@@ -177,7 +176,7 @@ export default {
   }
   .gift{
     position: absolute;
-    top:6.16rem;
+    top:12.38vh;
     right:0;
     width:10.6rem;
     height:9.64rem;
@@ -186,7 +185,7 @@ export default {
   }
   .cards{
     width: 27.72rem;
-    margin-top:1.92rem;
+    margin-top:3.6vh;
     margin-bottom:1.52rem;
     overflow: hidden;
     flex:1;
@@ -224,7 +223,7 @@ export default {
       }
       .center-layout{
         width:100%;
-        height:calc(100% - 5rem);
+        height:calc(100% - 5.4vh);
         max-height:16rem;
         display: flex;
         flex-direction: column;
@@ -234,7 +233,7 @@ export default {
         // position: absolute;
         // top:4.2rem;
         margin-right:1.52rem;
-        margin-bottom:0.6rem;
+        margin-bottom:1vh;
         // right:1.44rem;
         font-size:1.41rem;
         line-height:1.52rem;
@@ -261,7 +260,7 @@ export default {
         height:6.32rem;
         // top:12.44rem;
         margin-right:0.75rem;
-        padding:1rem;
+        padding:1.2vh;
         padding-right:0.3rem;
         text-align: right;
         font-size:1.08rem;

@@ -7,6 +7,8 @@
     </div>
     <div class="header">
       <img src="./assets/imgs/logo.png" alt="" class="logo">
+      <img v-show="!music.paused" src="./assets/imgs/music-on.png" alt="" class="music-control" @click="toggleBGM">
+      <img v-show="music.paused" src="./assets/imgs/music-off.png" alt="" class="music-control" @click="toggleBGM">
       <img src="./assets/imgs/reserve.png" alt="" v-show="showReserveBtn" class="reserve-btn" @click="showModal=true">
     </div>
     <img src="./assets/imgs/icons/scroll.png" alt="" @click="$refs.fullpage.api.moveSectionDown()" 
@@ -59,6 +61,9 @@ window.options = {
   },
   // sectionsColor: ['#41b883', '#ff5f45', '#0798ec']
 }
+window.music = {
+  paused:false
+}
 
 export default {
   components: {
@@ -94,12 +99,18 @@ export default {
     window.bgMusic.loop = true;
     setTimeout(() => {
       if(window.bgMusic.paused){
-        window.bgMusic.play();
+        window.bgMusic.play().catch(_=>{
+          if(window.bgMusic.paused){
+            window.bgMusic.play()
+          }
+        })
+        window.music.paused = false
       }
     }, 500);
     document.addEventListener("WeixinJSBridgeReady", ()=>{  
       if(window.bgMusic.paused){
         window.bgMusic.play();  
+        window.music.paused = false
       }
     }, false);
   },
@@ -115,6 +126,7 @@ export default {
         onLeave:this.onLeave,
         // sectionsColor: ['#41b883', '#ff5f45', '#0798ec']
       },
+      music:window.music,
       showModal:false,
       showReserveBtn:true,
       showSuccess:false,
@@ -133,11 +145,12 @@ export default {
       }
     },
     toggleBGM(){
-      if(this.bgMusic.paused){
-        this.bgMusic.play()
+      if(window.bgMusic.paused){
+        window.bgMusic.play()
       }else{
-        this.bgMusic.pause()
+        window.bgMusic.pause()
       }
+      window.music.paused = window.bgMusic.paused
     },
     success(){
       // this.showModal = false
@@ -157,13 +170,18 @@ export default {
     height:3.8rem;
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
+    // justify-content: space-between;
     padding-left:1.64rem;
     padding-right: 1rem;
     z-index: 999;
     .logo{
       width: 11.96rem;
       height:1.68rem;
+      margin-right:auto;
+    }
+    .music-control{
+      height:2.4rem;
+      margin-right: 0.6rem;
     }
     .reserve-btn{
       width:6.72rem;

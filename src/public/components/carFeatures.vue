@@ -14,20 +14,24 @@
     </swiper>
     <swiper :options="swiperOptionTexts" class="texts" ref="swiperTexts">
       <swiper-slide class="slide-1">
-        <div class="title">尖锋Battle造型美学</div>
+        <div class="title">律动：尖锋battle造型美学学</div>
         <div class="desc">极致运动轿跑SUV潮范十足，定义时尚</div>
       </swiper-slide>
       <swiper-slide class="slide-1">
-        <div class="title">激情运动，驾趣十足</div>
+        <div class="title">感动：激情运动，驾趣十足</div>
         <div class="desc">1.5GDIT+7DCT运动总成，专业底盘调教</div>
       </swiper-slide>
       <swiper-slide class="slide-1">
-        <div class="title">智能安全</div>
+        <div class="title">心动：科技智联，潮酷先锋</div>
+        <div class="desc">智能语音、智能娱乐、远程控制、智能出行</div>
+      </swiper-slide>
+      <swiper-slide class="slide-1">
+        <div class="title">主动：铠甲守护，智能安全</div>
         <div class="desc small">盲点侦测系统配合360度全景影像，车辆偏离预警及车道保持LKA等安全配置，智能实时防护，全程无忧驾驶</div>
       </swiper-slide>
       <swiper-slide class="slide-1">
-        <div class="title">智能互联</div>
-        <div class="desc">智能语音、智能娱乐、远程控制、智能出行</div>
+        <div class="title">倾动：极致专业，实力吸粉</div>
+        <div class="desc small">2018年哈弗成为中国首个进入500万俱乐部的SUV品牌，创下连续9年蝉联中国SUV销量第一的记录</div>
       </swiper-slide>
     </swiper>
   </div>
@@ -36,6 +40,7 @@
 import CrmForm from '../components/crmForm'
 import topUrls from '../assets/imgs/page5/lights/top/*.jpg'
 import bottomUrls from '../assets/imgs/page5/lights/bottom/*.png'
+console.log(topUrls)
 export default {
   components:{
     CrmForm
@@ -66,11 +71,11 @@ export default {
         spaceBetween: 10,
         loop: true,
         loopedSlides: Object.keys(topUrls).length,
-        autoplay: {
-          delay: 2000,
-          stopOnLastSlide: false,
-          disableOnInteraction: false,
-        },
+        // autoplay: {
+        //   delay: 2000,
+        //   stopOnLastSlide: false,
+        //   disableOnInteraction: false,
+        // },
         // watchSlidesVisibility: true,
         navigation: {
           nextEl: '.swiper-button-next',
@@ -123,7 +128,7 @@ export default {
       padding: 0.6rem 0;
       margin-right: -0.6rem;
       .swiper-slide {
-        width: 25%;
+        width: 20%;
         padding-right:0.6rem;
         opacity: 0.4;
         img{
