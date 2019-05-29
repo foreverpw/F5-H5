@@ -56,7 +56,6 @@ window.options = {
   autoScrolling:true,
   scrollingSpeed:400,
   onLeave(origin, destination, direction){
-    debugger
   },
   // sectionsColor: ['#41b883', '#ff5f45', '#0798ec']
 }
@@ -76,6 +75,11 @@ export default {
   mounted(){
     window.fp = this.$refs.fullpage
     window.addEventListener('orientationchange', function() {
+      setTimeout(() => {
+         window.fp.api.reBuild()
+      }, 200);
+    }, false);
+    window.addEventListener('resize', function() {
       setTimeout(() => {
          window.fp.api.reBuild()
       }, 200);
