@@ -27,8 +27,8 @@
               </div>
               <div class="location">
                 <img src="../assets/imgs/page2/location.png" alt="" class="icon">
-                <div class="info">
-                  <div class="top" @click="openMap(113.009834,28.193423,'长沙乐运三秒区篮球场','长沙市芙蓉区曙光北路119号 曙光798城市体验馆2号栋')">
+                <div class="info" @click="openMap(113.009834,28.193423,'长沙乐运三秒区篮球场','长沙市芙蓉区曙光北路119号 曙光798城市体验馆2号栋')">
+                  <div class="top">
                     <div class="date">6.8</div>
                     长沙乐运三秒区篮球场
                   </div>
@@ -53,8 +53,8 @@
               </div>
               <div class="location">
                 <img src="../assets/imgs/page2/location.png" alt="" class="icon">
-                <div class="info">
-                  <div class="top" @click="openMap(106.515902,29.672293,'重庆Elite篮球中心','重庆市渝北区北部区金渝大道28号辅助厂房')">
+                <div class="info" @click="openMap(106.515902,29.672293,'重庆Elite篮球中心','重庆市渝北区北部区金渝大道28号辅助厂房')">
+                  <div class="top">
                     <div class="date">6.13</div>
                     重庆Elite篮球中心
                   </div>
@@ -78,8 +78,8 @@
               </div>
               <div class="location">
                 <img src="../assets/imgs/page2/location.png" alt="" class="icon">
-                <div class="info">
-                  <div class="top" @click="openMap(113.348537,23.178798,'广州L2球馆','广州市天河区天河客运站旁 元岗横路18号（L2体育会天河旗舰店）')">
+                <div class="info" @click="openMap(113.348537,23.178798,'广州L2球馆','广州市天河区天河客运站旁 元岗横路18号（L2体育会天河旗舰店）')">
+                  <div class="top">
                     <div class="date">6.22</div>
                     广州L2球馆
                   </div>
@@ -128,8 +128,8 @@ export default {
     },
     changeState(state){
       this.state=state
-      // this.cancelInterval()
-      // this.initInterval()
+      this.cancelInterval()
+      this.initInterval()
     },
     openMap(longitude,latitude,name,desc){
       var result = gcoord.transform(

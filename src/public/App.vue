@@ -78,7 +78,7 @@ export default {
     window.addEventListener('orientationchange', function() {
       setTimeout(() => {
          window.fp.api.reBuild()
-      }, 100);
+      }, 200);
     }, false);
     let bg = new Image()
     bg.onload = () => {
