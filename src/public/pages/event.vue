@@ -25,9 +25,9 @@
               <div class="name">张智杨</div>
               <div class="quote">我是路人王“十冠王”&nbsp;&nbsp;&#10;张智杨，够胆你就来，&#10;我在现场等你！</div>
               </div>
-              <div class="location">
+              <div class="location" @click="openMap(113.009834,28.193423,'长沙乐运三秒区篮球场','长沙市芙蓉区曙光北路119号 曙光798城市体验馆2号栋')">
                 <img src="../assets/imgs/page2/location.png" alt="" class="icon">
-                <div class="info" @click="openMap(113.009834,28.193423,'长沙乐运三秒区篮球场','长沙市芙蓉区曙光北路119号 曙光798城市体验馆2号栋')">
+                <div class="info">
                   <div class="top">
                     <div class="date">6.8</div>
                     长沙乐运三秒区篮球场
@@ -51,9 +51,9 @@
               <div class="name">孟亚东</div>
               <div class="quote">“大魔王”平常心前来&#10;踢馆！球场要用实力说&#10;话，不服就来战！</div>
               </div>
-              <div class="location">
+              <div class="location" @click="openMap(106.515902,29.672293,'重庆Elite篮球中心','重庆市渝北区北部区金渝大道28号辅助厂房')">
                 <img src="../assets/imgs/page2/location.png" alt="" class="icon">
-                <div class="info" @click="openMap(106.515902,29.672293,'重庆Elite篮球中心','重庆市渝北区北部区金渝大道28号辅助厂房')">
+                <div class="info">
                   <div class="top">
                     <div class="date">6.13</div>
                     重庆Elite篮球中心
@@ -76,9 +76,9 @@
               <div class="name">董康潮</div>
               <div class="quote">“洋葱哥”董康潮参上！&#10;你的反应和我的过人哪个&#10;更快？来一较高下吧！</div>
               </div>
-              <div class="location">
+              <div class="location" @click="openMap(113.348537,23.178798,'广州L2球馆','广州市天河区天河客运站旁 元岗横路18号（L2体育会天河旗舰店）')">
                 <img src="../assets/imgs/page2/location.png" alt="" class="icon">
-                <div class="info" @click="openMap(113.348537,23.178798,'广州L2球馆','广州市天河区天河客运站旁 元岗横路18号（L2体育会天河旗舰店）')">
+                <div class="info">
                   <div class="top">
                     <div class="date">6.22</div>
                     广州L2球馆
