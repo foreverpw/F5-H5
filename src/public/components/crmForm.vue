@@ -108,6 +108,7 @@ export default {
   methods:{
     focus(e){
       // window.fp.api.setAllowScrolling(false);
+      e.currentTarget.scrollIntoView();
       clearTimeout(this.scrollTO)
     },
     blur(e){
