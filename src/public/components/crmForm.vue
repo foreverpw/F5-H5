@@ -71,8 +71,10 @@ export default {
       } else {
             // this.$emit('blur')
         //alert('收')
-        window.scrollTo(0,0)
-        document.body.scrollTop = 0
+        setTimeout(() => {
+          window.scrollTo(0,0)
+          document.body.scrollTop = 0
+        }, 100);
       }
     }, false);
   },
