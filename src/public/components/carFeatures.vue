@@ -14,7 +14,7 @@
     </swiper>
     <swiper :options="swiperOptionTexts" class="texts" ref="swiperTexts">
       <swiper-slide class="slide-1">
-        <div class="title">律动：尖锋battle造型美学学</div>
+        <div class="title">律动：尖锋battle造型美学</div>
         <div class="desc">极致运动轿跑SUV潮范十足，定义时尚</div>
       </swiper-slide>
       <swiper-slide class="slide-1">

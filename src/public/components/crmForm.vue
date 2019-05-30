@@ -28,7 +28,7 @@
       <div class="label">经销商</div>
       <select name="" id="" v-model="shnumber" class="input" @focus="focus" @blur="blur">
         <option disabled value="">请选择经销商</option>
-        <option v-for="a in agencies" :key="a.shnumber">{{a.shortName}}</option>
+        <option v-for="a in agencies" :key="a.shnumber" :value="a.shnumber">{{a.shortName}}</option>
       </select>
       <div class="down-triangle"></div>
     </div>
