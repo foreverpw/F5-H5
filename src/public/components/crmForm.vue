@@ -74,7 +74,8 @@ export default {
         setTimeout(() => {
           window.scrollTo(0,0)
           document.body.scrollTop = 0
-        }, 100);
+          fullpage_api.moveTo(3, 0);
+        }, 250);
       }
     }, false);
   },
@@ -130,7 +131,7 @@ export default {
       this.scrollTO = setTimeout(() => {
         window.scrollTo(0,0)
         document.body.scrollTop = 0
-      }, 100);
+      }, 150);
     },
     provinceChange(){
       this.cities = this.PROVINCE_CITY_MAP[this.province]
