@@ -62,15 +62,19 @@ function locationValidate(location){
 const ps = ['上海市','北京市','天津市','重庆市']
 export default {
   created(){
+    let vm = this
     const originHeight = document.documentElement.clientHeight || document.body.clientHeight;
-    // window.addEventListener('resize', function() {
-    //   const resizeHeight = document.documentElement.clientHeight || document.body.clientHeight;
-    //   if (resizeHeight < originHeight) {
-    //     //alert('弹')
-    //   } else {
-    //     //alert('收')
-    //   }
-    // }, false);
+    window.addEventListener('resize', function() {
+      const resizeHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      if (originHeight-resizeHeight > 140) {
+        //alert('弹')
+      } else {
+            // this.$emit('blur')
+        //alert('收')
+        window.scrollTo(0,0)
+        document.body.scrollTop = 0
+      }
+    }, false);
   },
   props:{
     type:{
@@ -112,13 +116,18 @@ export default {
       // let rect = this.$refs.form.getBoundingClientRect()
       // setTimeout(() => {
       //   window.scrollTo(0,rect.top);
+      // document.body.scrollTop = rect.top
       // }, 50);
+      // e.currentTarget.scrollIntoView();
+      // this.$emit('input')
       clearTimeout(this.scrollTO)
     },
     blur(e){
       // window.fp.api.setAllowScrolling(true);
+      // this.$emit('blur')
       this.scrollTO = setTimeout(() => {
         window.scrollTo(0,0)
+        document.body.scrollTop = 0
       }, 100);
     },
     provinceChange(){
