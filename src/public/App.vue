@@ -93,7 +93,6 @@ export default {
           window.fp.api.reBuild()
         }, 200);
       } else {
-        //alert('收')
       }
       lastStateHeight = resizeHeight
     }, false);
