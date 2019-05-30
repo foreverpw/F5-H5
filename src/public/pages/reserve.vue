@@ -1,5 +1,5 @@
 <template>
-  <bg :page="3" class="reserve-section">
+  <bg :page="3" class="reserve-section" ref="reserve_section" id="reserve_section">
     <div class="main">
       <img src="../assets/imgs/page3/title.png" alt="" class="title">
       <div class="desc1-row">
@@ -7,7 +7,7 @@
         <img src="../assets/imgs/page3/desc1-2.png" alt="" class="desc1-2">
       </div>
       <img src="../assets/imgs/page3/desc2.png" alt="" class="desc2">
-      <crm-form type="page" class="form" @success="success"></crm-form>
+      <crm-form type="page" class="form" @success="success" @blur="formBlur"></crm-form>
       <success :show.sync="showSuccess" @update:show="onhide"></success>
     </div>
   </bg>
@@ -35,6 +35,10 @@ export default {
       setTimeout(() => {
         window.fp.api.moveSectionDown()
       }, 500);
+    },
+    formBlur(){
+      // alert(this.$refs.reserve_section)
+      this.$refs.reserve_section.$el.scrollIntoView()
     }
   }
 }
@@ -46,6 +50,12 @@ export default {
     align-items: center;
     position: relative;
     height:100%;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // position: fixed;
+    // height: calc(100% - 3.8rem);
+    // width: 100%;
   }
   .title{
     margin-top:3.58rem;

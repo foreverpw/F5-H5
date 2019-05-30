@@ -74,8 +74,10 @@ export default {
         setTimeout(() => {
           window.scrollTo(0,0)
           document.body.scrollTop = 0
-          window.fp.api.moveTo(3, 0);
-        }, 250);
+          vm.$emit('blur')
+          // window.fp.api.reBuild()
+          // window.fp.api.moveTo(3, 0);
+        }, 100);
       }
     }, false);
   },
@@ -127,11 +129,11 @@ export default {
     },
     blur(e){
       // window.fp.api.setAllowScrolling(true);
-      // this.$emit('blur')
+      this.$emit('blur')
       this.scrollTO = setTimeout(() => {
         window.scrollTo(0,0)
         document.body.scrollTop = 0
-      }, 150);
+      }, 100);
     },
     provinceChange(){
       this.cities = this.PROVINCE_CITY_MAP[this.province]
