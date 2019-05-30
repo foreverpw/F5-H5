@@ -108,7 +108,11 @@ export default {
   methods:{
     focus(e){
       // window.fp.api.setAllowScrolling(false);
-      e.currentTarget.scrollIntoView();
+      // e.currentTarget.scrollIntoView();
+      let rect = this.$refs.form.getBoundingClientRect()
+      setTimeout(() => {
+        window.scrollTo(0,rect.top);
+      }, 50);
       clearTimeout(this.scrollTO)
     },
     blur(e){
