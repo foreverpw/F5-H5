@@ -79,15 +79,23 @@ export default {
   },
   mounted(){
     window.fp = this.$refs.fullpage
-    window.addEventListener('orientationchange', function() {
-      setTimeout(() => {
-         window.fp.api.reBuild()
-      }, 200);
-    }, false);
+    // window.addEventListener('orientationchange', function() {
+    //   alert(1)
+    //   setTimeout(() => {
+    //      window.fp.api.reBuild()
+    //   }, 200);
+    // }, false);
+    let lastStateHeight = document.documentElement.clientHeight || document.body.clientHeight;
     window.addEventListener('resize', function() {
-      setTimeout(() => {
-         window.fp.api.reBuild()
-      }, 200);
+      const resizeHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      if (resizeHeight > lastStateHeight) {
+        setTimeout(() => {
+          window.fp.api.reBuild()
+        }, 200);
+      } else {
+        //alert('收')
+      }
+      lastStateHeight = resizeHeight
     }, false);
     let bg = new Image()
     bg.onload = () => {
