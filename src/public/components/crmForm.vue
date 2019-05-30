@@ -68,15 +68,13 @@ export default {
       const resizeHeight = document.documentElement.clientHeight || document.body.clientHeight;
       if (originHeight-resizeHeight > 140) {
         //alert('弹')
-        vm.$alert('1')
       } else {
             // this.$emit('blur')
         //alert('收')
-        vm.$alert('2')
         setTimeout(() => {
           window.scrollTo(0,0)
           document.body.scrollTop = 0
-          fullpage_api.moveTo(3, 0);
+          window.fp.api.moveTo(3, 0);
         }, 250);
       }
     }, false);
@@ -130,7 +128,6 @@ export default {
     blur(e){
       // window.fp.api.setAllowScrolling(true);
       // this.$emit('blur')
-      this.$alert('3')
       this.scrollTO = setTimeout(() => {
         window.scrollTo(0,0)
         document.body.scrollTop = 0
