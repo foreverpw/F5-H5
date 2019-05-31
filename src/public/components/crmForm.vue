@@ -71,13 +71,16 @@ export default {
       } else {
             // this.$emit('blur')
         //alert('收')
-        setTimeout(() => {
-          window.scrollTo(0,0)
-          document.body.scrollTop = 0
-          vm.$emit('blur')
-          // window.fp.api.reBuild()
-          // window.fp.api.moveTo(3, 0);
-        }, 100);
+        if(vm.focused){
+          // vm.focus = false;
+          setTimeout(() => {
+            window.scrollTo(0,0)
+            document.body.scrollTop = 0
+            vm.$emit('blur')
+            // window.fp.api.reBuild()
+            // window.fp.api.moveTo(3, 0);
+          }, 100);
+        }
       }
     }, false);
   },
@@ -104,6 +107,7 @@ export default {
   },
   data(){
     return {
+      focused:false,
       name:'',
       phone:'',
       PROVINCE_CITY_MAP,
@@ -125,6 +129,7 @@ export default {
       // }, 50);
       // e.currentTarget.scrollIntoView();
       // this.$emit('input')
+      this.focused = true;
       clearTimeout(this.scrollTO)
     },
     blur(e){
