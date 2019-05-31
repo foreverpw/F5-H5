@@ -61,28 +61,30 @@ function locationValidate(location){
 }
 const ps = ['上海市','北京市','天津市','重庆市']
 export default {
-  created(){
+  mounted(){
     let vm = this
     const originHeight = document.documentElement.clientHeight || document.body.clientHeight;
-    window.addEventListener('resize', function() {
-      const resizeHeight = document.documentElement.clientHeight || document.body.clientHeight;
-      if (originHeight-resizeHeight > 140) {
-        //alert('弹')
-      } else {
-            // this.$emit('blur')
-        //alert('收')
-        if(vm.focused){
-          // vm.focus = false;
-          setTimeout(() => {
-            window.scrollTo(0,0)
-            document.body.scrollTop = 0
-            vm.$emit('blur')
-            // window.fp.api.reBuild()
-            // window.fp.api.moveTo(3, 0);
-          }, 100);
+    setTimeout(() => {
+      window.addEventListener('resize', function() {
+        const resizeHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        if (originHeight-resizeHeight > 140) {
+          //alert('弹')
+        } else {
+              // this.$emit('blur')
+          //alert('收')
+          if(vm.focused){
+            // vm.focus = false;
+            setTimeout(() => {
+              window.scrollTo(0,0)
+              document.body.scrollTop = 0
+              vm.$emit('blur')
+              // window.fp.api.reBuild()
+              // window.fp.api.moveTo(3, 0);
+            }, 100);
+          }
         }
-      }
-    }, false);
+      }, false);
+    }, 800);
   },
   props:{
     type:{
