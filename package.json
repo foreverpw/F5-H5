@@ -31,6 +31,7 @@
     "jsonp": "^0.2.1",
     "my-picker": "^1.0.1",
     "npm": "^6.9.0",
+    "parcel-plugin-compress": "^1.0.10",
     "v-lazy-image": "^1.3.2",
     "video.js": "^7.5.4",
     "vue": "^2.5.17",
