@@ -21,9 +21,9 @@
             <div class="detail-container" v-show="state==1">
               <img src="../assets/imgs/page2/cs-kol.png" alt="" class="kol kol1">
               <div class="center-layout">
-                <div class="title">颜值实力双C位&#10;路人王“井柏然”</div>
-              <div class="name">张智杨</div>
-              <div class="quote">我是路人王“十冠王”&nbsp;&nbsp;&#10;张智杨，够胆你就来，&#10;我在现场等你！</div>
+                <div class="title">soma步“教科书”&#10;“魔鬼老师”</div>
+              <div class="name">张浩林</div>
+              <div class="quote">我是北京站冠军张浩林&nbsp;&nbsp;&#10;想防住我的soma步？&#10;你可以来试试！</div>
               </div>
               <div class="location" @click="openMap(113.009834,28.193423,'长沙乐运三秒区篮球场','长沙市芙蓉区曙光北路119号 曙光798城市体验馆2号栋')">
                 <img src="../assets/imgs/page2/location.png" alt="" class="icon">
@@ -217,6 +217,10 @@ export default {
         &.kol3{
           top:2rem;
           height:calc(100% - 2rem);
+          left:-1rem;
+          z-index: 9;
+        }
+        &.kol1{
           left:-1rem;
           z-index: 9;
         }
