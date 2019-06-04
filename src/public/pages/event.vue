@@ -150,10 +150,14 @@ export default {
           });
         })
       }else{
-        debugger
-        window.map.centerAndZoom(new BMap.Point(longitude,latitude),15);
-        window.map.enableScrollWheelZoom(true);
-        mapDom.style.display = "block"
+        window.mapDom.style.display = "block"
+        let map = new BMap.Map("bmap");
+        var point = new BMap.Point(longitude,latitude);
+        map.centerAndZoom(point,17);    
+        map.enableScrollWheelZoom(true);
+        var marker = new BMap.Marker(point);// 创建标注
+        map.addOverlay(marker);       
+        // map.panTo(point);     
       }
     }
   }

@@ -4,7 +4,11 @@ import './assets/scss/main.scss';
 import 'animate.css'
 // import VueCookie from 'vue-cookie';
 // Vue.use(VueCookie);
-console.log('v1.0.1')
+console.log('v1.0.2')
+
+import FastClick from 'fastclick';
+FastClick(document.body);
+
 import VueLazyload from 'vue-lazyload'
 Vue.use(VueLazyload,{
   preLoad: 2

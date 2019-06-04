@@ -5,7 +5,7 @@
     <div class="rotate-mask">
       请在竖屏模式下浏览
     </div>
-    <div id="bmap" ref="map"></div>
+    <Bmap></Bmap>
     <div class="header">
       <img src="./assets/imgs/logo.png" alt="" class="logo">
       <img v-show="!music.paused" src="./assets/imgs/music-on.png" alt="" class="music-control" @click="toggleBGM">
@@ -46,6 +46,7 @@
 // import 'iosselect/src/iosSelect.css'
 import Landing from './pages/landing'
 import Event from './pages/event'
+import Bmap from './pages/bmap'
 import Reserve from './pages/reserve'
 import F5 from './pages/f5'
 import SportHighlights from './pages/sportHighlights'
@@ -74,14 +75,12 @@ export default {
     SportHighlights,
     FormModal,
     F5,
-    Success
+    Success,
+    Bmap
   },
   created(){
   },
   mounted(){
-    window.map = new BMap.Map("bmap");
-    window.mapDom = this.$refs.map
-
     window.fp = this.$refs.fullpage
     // window.addEventListener('orientationchange', function() {
     //   alert(1)
@@ -174,15 +173,6 @@ export default {
 <style lang="scss" scoped>
   .app{
     height:100%;
-  }
-  #bmap{
-    width: 100%;
-    height:100%;
-    position: fixed!important;
-    left:0;
-    top:0;
-    z-index: 9999!important;
-    display: none;
   }
   .header{
     width: 100%;

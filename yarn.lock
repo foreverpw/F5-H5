@@ -819,6 +819,13 @@
   resolved "https://registry.npmjs.org/@fortawesome/vue-fontawesome/-/vue-fontawesome-0.1.6.tgz#18a0f4263b90f65180fc927325ba01896276ea04"
   integrity sha512-HAGRbrOuGDwwUmCYdpzR0hhNQ3EE30dOS4JiJKcoZ+S4M210CxyU0OXCgzIg3HzK/23rlpHbV8zi9PDDZDnuIw==
 
+"@gfx/zopfli@1.0.13":
+  version "1.0.13"
+  resolved "http://registry.npm.successchannel.tech/@gfx/zopfli/download/@gfx/zopfli-1.0.13.tgz#88ca5b15567e9c76be73e8d11e166273ce44e0b3"
+  integrity sha1-iMpbFVZ+nHa+c+jRHhZic85E4LM=
+  dependencies:
+    base64-js "^1.3.0"
+
 "@iarna/toml@^2.2.0":
   version "2.2.3"
   resolved "http://registry.npm.successchannel.tech/@iarna/toml/download/@iarna/toml-2.2.3.tgz#f060bf6eaafae4d56a7dac618980838b0696e2ab"
@@ -1035,6 +1042,11 @@ ansi-regex@^3.0.0:
   version "3.0.0"
   resolved "http://registry.npm.successchannel.tech/ansi-regex/download/ansi-regex-3.0.0.tgz#ed0317c322064f79466c02966bddb605ab37d998"
   integrity sha1-7QMXwyIGT3lGbAKWa922Bas32Zg=
+
+ansi-regex@^4.1.0:
+  version "4.1.0"
+  resolved "http://registry.npm.successchannel.tech/ansi-regex/download/ansi-regex-4.1.0.tgz#8b9f8f08cf1acb843756a839ca8c7e3168c51997"
+  integrity sha1-i5+PCM8ay4Q3Vqg5yox+MWjFGZc=
 
 ansi-styles@^2.2.1:
   version "2.2.1"
@@ -1808,7 +1820,7 @@ balanced-match@^1.0.0:
   resolved "http://registry.npm.successchannel.tech/balanced-match/download/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
-base64-js@^1.0.2:
+base64-js@^1.0.2, base64-js@^1.1.2, base64-js@^1.3.0:
   version "1.3.0"
   resolved "http://registry.npm.successchannel.tech/base64-js/download/base64-js-1.3.0.tgz#cab1e6118f051095e58b5281aea8c1cd22bfc0e3"
   integrity sha1-yrHmEY8FEJXli1KBrqjBzSK/wOM=
@@ -1853,6 +1865,14 @@ bindings@~1.2.1:
   version "1.2.1"
   resolved "http://registry.npm.successchannel.tech/bindings/download/bindings-1.2.1.tgz#14ad6113812d2d37d72e67b4cacb4bb726505f11"
   integrity sha1-FK1hE4EtLTfXLme0ystLtyZQXxE=
+
+bl@^1.0.0:
+  version "1.2.2"
+  resolved "http://registry.npm.successchannel.tech/bl/download/bl-1.2.2.tgz#a160911717103c07410cef63ef51b397c025af9c"
+  integrity sha1-oWCRFxcQPAdBDO9j71Gzl8Alr5w=
+  dependencies:
+    readable-stream "^2.3.5"
+    safe-buffer "^5.1.1"
 
 block-stream@*:
   version "0.0.9"
@@ -1932,6 +1952,13 @@ brorand@^1.0.1:
   version "1.1.0"
   resolved "http://registry.npm.successchannel.tech/brorand/download/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
   integrity sha1-EsJe/kCkXjwyPrhnWgoM5XsiNx8=
+
+brotli@1.3.2:
+  version "1.3.2"
+  resolved "http://registry.npm.successchannel.tech/brotli/download/brotli-1.3.2.tgz#525a9cad4fcba96475d7d388f6aecb13eed52f46"
+  integrity sha1-UlqcrU/LqWR119OI9q7LE+7VL0Y=
+  dependencies:
+    base64-js "^1.1.2"
 
 browser-process-hrtime@^0.1.2:
   version "0.1.3"
@@ -2019,10 +2046,28 @@ bson@^1.1.1, bson@~1.1.1:
   resolved "http://registry.npm.successchannel.tech/bson/download/bson-1.1.1.tgz#4330f5e99104c4e751e7351859e2d408279f2f13"
   integrity sha1-QzD16ZEExOdR5zUYWeLUCCefLxM=
 
+buffer-alloc-unsafe@^1.1.0:
+  version "1.1.0"
+  resolved "http://registry.npm.successchannel.tech/buffer-alloc-unsafe/download/buffer-alloc-unsafe-1.1.0.tgz#bd7dc26ae2972d0eda253be061dba992349c19f0"
+  integrity sha1-vX3CauKXLQ7aJTvgYdupkjScGfA=
+
+buffer-alloc@^1.2.0:
+  version "1.2.0"
+  resolved "http://registry.npm.successchannel.tech/buffer-alloc/download/buffer-alloc-1.2.0.tgz#890dd90d923a873e08e10e5fd51a57e5b7cce0ec"
+  integrity sha1-iQ3ZDZI6hz4I4Q5f1RpX5bfM4Ow=
+  dependencies:
+    buffer-alloc-unsafe "^1.1.0"
+    buffer-fill "^1.0.0"
+
 buffer-equal@0.0.1:
   version "0.0.1"
   resolved "http://registry.npm.successchannel.tech/buffer-equal/download/buffer-equal-0.0.1.tgz#91bc74b11ea405bc916bc6aa908faafa5b4aac4b"
   integrity sha1-kbx0sR6kBbyRa8aqkI+q+ltKrEs=
+
+buffer-fill@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.successchannel.tech/buffer-fill/download/buffer-fill-1.0.0.tgz#f8f78b76789888ef39f205cd637f68e702122b2c"
+  integrity sha1-+PeLdniYiO858gXNY39o5wISKyw=
 
 buffer-from@^1.0.0:
   version "1.1.1"
@@ -2188,6 +2233,15 @@ caseless@~0.12.0:
   resolved "http://registry.npm.successchannel.tech/caseless/download/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
 
+chalk@2.4.2, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.1, chalk@^2.4.1, chalk@^2.4.2:
+  version "2.4.2"
+  resolved "http://registry.npm.successchannel.tech/chalk/download/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
+  integrity sha1-zUJUFnelQzPPVBpJEIwUMrRMlCQ=
+  dependencies:
+    ansi-styles "^3.2.1"
+    escape-string-regexp "^1.0.5"
+    supports-color "^5.3.0"
+
 chalk@^1.1.1, chalk@^1.1.3:
   version "1.1.3"
   resolved "http://registry.npm.successchannel.tech/chalk/download/chalk-1.1.3.tgz#a8115c55e4a702fe4d150abd3872822a7e09fc98"
@@ -2198,15 +2252,6 @@ chalk@^1.1.1, chalk@^1.1.3:
     has-ansi "^2.0.0"
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
-
-chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.1, chalk@^2.4.1, chalk@^2.4.2:
-  version "2.4.2"
-  resolved "http://registry.npm.successchannel.tech/chalk/download/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
-  integrity sha1-zUJUFnelQzPPVBpJEIwUMrRMlCQ=
-  dependencies:
-    ansi-styles "^3.2.1"
-    escape-string-regexp "^1.0.5"
-    supports-color "^5.3.0"
 
 chokidar@^2.0.3:
   version "2.1.6"
@@ -2227,7 +2272,7 @@ chokidar@^2.0.3:
   optionalDependencies:
     fsevents "^1.2.7"
 
-chownr@^1.1.1:
+chownr@^1.0.1, chownr@^1.1.1:
   version "1.1.1"
   resolved "http://registry.npm.successchannel.tech/chownr/download/chownr-1.1.1.tgz#54726b8b8fff4df053c42187e801fb4412df1494"
   integrity sha1-VHJri4//TfBTxCGH6AH7RBLfFJQ=
@@ -2430,7 +2475,7 @@ command-exists@^1.2.6:
   resolved "http://registry.npm.successchannel.tech/command-exists/download/command-exists-1.2.8.tgz#715acefdd1223b9c9b37110a149c6392c2852291"
   integrity sha1-cVrO/dEiO5ybNxEKFJxjksKFIpE=
 
-commander@^2.11.0, commander@^2.19.0, commander@^2.9.0:
+commander@2.20.0, commander@^2.11.0, commander@^2.19.0, commander@^2.9.0:
   version "2.20.0"
   resolved "http://registry.npm.successchannel.tech/commander/download/commander-2.20.0.tgz#d58bb2b5c1ee8f87b0d340027e9e94e222c5a422"
   integrity sha1-1YuytcHuj4ew00ACfp6U4iLFpCI=
@@ -2547,7 +2592,7 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   resolved "http://registry.npm.successchannel.tech/core-util-is/download/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
 
-cosmiconfig@^5.0.0:
+cosmiconfig@5.2.1, cosmiconfig@^5.0.0:
   version "5.2.1"
   resolved "http://registry.npm.successchannel.tech/cosmiconfig/download/cosmiconfig-5.2.1.tgz#040f726809c591e77a17c0a3626ca45b4f168b1a"
   integrity sha1-BA9yaAnFked6F8CjYmykW08Wixo=
@@ -3019,7 +3064,7 @@ detect-indent@~5.0.0:
   resolved "http://registry.npm.successchannel.tech/detect-indent/download/detect-indent-5.0.0.tgz#3871cc0a6a002e8c3e5b3cf7f336264675f06b9d"
   integrity sha1-OHHMCmoALow+Wzz38zYmRnXwa50=
 
-detect-libc@^1.0.2:
+detect-libc@^1.0.2, detect-libc@^1.0.3:
   version "1.0.3"
   resolved "http://registry.npm.successchannel.tech/detect-libc/download/detect-libc-1.0.3.tgz#fa137c4bd698edf55cd5cd02ac559f91a4c4ba9b"
   integrity sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
@@ -3335,6 +3380,11 @@ etag@~1.8.1:
   resolved "http://registry.npm.successchannel.tech/etag/download/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
 
+eventemitter3@^3.1.0:
+  version "3.1.2"
+  resolved "http://registry.npm.successchannel.tech/eventemitter3/download/eventemitter3-3.1.2.tgz#2d3d48f9c346698fce83a85d7d664e98535df6e7"
+  integrity sha1-LT1I+cNGaY/Og6hdfWZOmFNd9uc=
+
 events@^3.0.0:
   version "3.0.0"
   resolved "http://registry.npm.successchannel.tech/events/download/events-3.0.0.tgz#9a0a0dfaf62893d92b875b8f2698ca4114973e88"
@@ -3373,6 +3423,11 @@ expand-brackets@^2.1.4:
     regex-not "^1.0.0"
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
+
+expand-template@^2.0.3:
+  version "2.0.3"
+  resolved "http://registry.npm.successchannel.tech/expand-template/download/expand-template-2.0.3.tgz#6e14b3fcee0f3a6340ecb57d2e8918692052a47c"
+  integrity sha1-bhSz/O4POmNA7LV9LokYaSBSpHw=
 
 extend-shallow@^2.0.1:
   version "2.0.1"
@@ -3455,6 +3510,11 @@ fast-levenshtein@~2.0.4:
   resolved "http://registry.npm.successchannel.tech/fast-levenshtein/download/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
 
+fastclick@^1.0.6:
+  version "1.0.6"
+  resolved "http://registry.npm.successchannel.tech/fastclick/download/fastclick-1.0.6.tgz#161625b27b1a5806405936bda9a2c1926d06be6a"
+  integrity sha1-FhYlsnsaWAZAWTa9qaLBkm0Gvmo=
+
 fastparse@^1.1.1:
   version "1.1.2"
   resolved "http://registry.npm.successchannel.tech/fastparse/download/fastparse-1.1.2.tgz#91728c5a5942eced8531283c79441ee4122c35a9"
@@ -3464,6 +3524,11 @@ figgy-pudding@^3.4.1, figgy-pudding@^3.5.1:
   version "3.5.1"
   resolved "http://registry.npm.successchannel.tech/figgy-pudding/download/figgy-pudding-3.5.1.tgz#862470112901c727a0e495a80744bd5baa1d6790"
   integrity sha1-hiRwESkBxyeg5JWoB0S9W6odZ5A=
+
+filesize@4.1.2:
+  version "4.1.2"
+  resolved "http://registry.npm.successchannel.tech/filesize/download/filesize-4.1.2.tgz#fcd570af1353cea97897be64f56183adb995994b"
+  integrity sha1-/NVwrxNTzql4l75k9WGDrbmVmUs=
 
 filesize@^3.6.0:
   version "3.6.1"
@@ -3580,6 +3645,11 @@ from2@^2.1.0:
   dependencies:
     inherits "^2.0.1"
     readable-stream "^2.0.0"
+
+fs-constants@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.successchannel.tech/fs-constants/download/fs-constants-1.0.0.tgz#6be0de9be998ce16af8afc24497b9ee9b7ccd9ad"
+  integrity sha1-a+Dem+mYzhavivwkSXue6bfM2a0=
 
 fs-minipass@^1.2.5:
   version "1.2.6"
@@ -3724,6 +3794,11 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
+github-from-package@0.0.0:
+  version "0.0.0"
+  resolved "http://registry.npm.successchannel.tech/github-from-package/download/github-from-package-0.0.0.tgz#97fb5d96bfde8973313f20e8288ef9a167fa64ce"
+  integrity sha1-l/tdlr/eiXMxPyDoKI75oWf6ZM4=
+
 glob-parent@^3.1.0:
   version "3.1.0"
   resolved "http://registry.npm.successchannel.tech/glob-parent/download/glob-parent-3.1.0.tgz#9e6af6299d8d3bd2bd40430832bd113df906c5ae"
@@ -3822,7 +3897,7 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2:
   resolved "http://registry.npm.successchannel.tech/graceful-fs/download/graceful-fs-4.1.15.tgz#ffb703e1066e8a0eeaa4c8b80ba9253eeefbfb00"
   integrity sha1-/7cD4QZuig7qpMi4C6klPu77+wA=
 
-grapheme-breaker@^0.3.2:
+grapheme-breaker@0.3.2, grapheme-breaker@^0.3.2:
   version "0.3.2"
   resolved "http://registry.npm.successchannel.tech/grapheme-breaker/download/grapheme-breaker-0.3.2.tgz#5b9e6b78c3832452d2ba2bb1cb830f96276410ac"
   integrity sha1-W55reMODJFLSuiuxy4MPlidkEKw=
@@ -4110,6 +4185,17 @@ ignore-walk@^3.0.1:
   integrity sha1-qD5i59JyrA47VRqqgoMaGbafgvg=
   dependencies:
     minimatch "^3.0.4"
+
+iltorb@2.4.3:
+  version "2.4.3"
+  resolved "http://registry.npm.successchannel.tech/iltorb/download/iltorb-2.4.3.tgz#b489689d24c8a25a2cf170c515f97954edd45577"
+  integrity sha1-tIlonSTIolos8XDFFfl5VO3UVXc=
+  dependencies:
+    detect-libc "^1.0.3"
+    nan "^2.13.2"
+    npmlog "^4.1.2"
+    prebuild-install "^5.3.0"
+    which-pm-runs "^1.0.0"
 
 import-fresh@^2.0.0:
   version "2.0.0"
@@ -5446,6 +5532,11 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
+napi-build-utils@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.successchannel.tech/napi-build-utils/download/napi-build-utils-1.0.1.tgz#1381a0f92c39d66bf19852e7873432fc2123e508"
+  integrity sha1-E4Gg+Sw51mvxmFLnhzQy/CEj5Qg=
+
 needle@^2.2.1:
   version "2.4.0"
   resolved "http://registry.npm.successchannel.tech/needle/download/needle-2.4.0.tgz#6833e74975c444642590e15a750288c5f939b57c"
@@ -5460,7 +5551,14 @@ nice-try@^1.0.4:
   resolved "http://registry.npm.successchannel.tech/nice-try/download/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha1-ozeKdpbOfSI+iPybdkvX7xCJ42Y=
 
-node-addon-api@^1.6.0:
+node-abi@^2.7.0:
+  version "2.8.0"
+  resolved "http://registry.npm.successchannel.tech/node-abi/download/node-abi-2.8.0.tgz#bd2e88dbe6a6871e6dd08553e0605779325737ec"
+  integrity sha1-vS6I2+amhx5t0IVT4GBXeTJXN+w=
+  dependencies:
+    semver "^5.4.1"
+
+node-addon-api@1.6.3, node-addon-api@^1.6.0:
   version "1.6.3"
   resolved "http://registry.npm.successchannel.tech/node-addon-api/download/node-addon-api-1.6.3.tgz#3998d4593e2dca2ea82114670a4eb003386a9fe1"
   integrity sha1-OZjUWT4tyi6oIRRnCk6wAzhqn+E=
@@ -5479,6 +5577,23 @@ node-forge@^0.7.1:
   resolved "http://registry.npm.successchannel.tech/node-forge/download/node-forge-0.7.6.tgz#fdf3b418aee1f94f0ef642cd63486c77ca9724ac"
   integrity sha1-/fO0GK7h+U8O9kLNY0hsd8qXJKw=
 
+node-gyp@4.0.0, node-gyp@^4.0.0:
+  version "4.0.0"
+  resolved "http://registry.npm.successchannel.tech/node-gyp/download/node-gyp-4.0.0.tgz#972654af4e5dd0cd2a19081b4b46fe0442ba6f45"
+  integrity sha1-lyZUr05d0M0qGQgbS0b+BEK6b0U=
+  dependencies:
+    glob "^7.0.3"
+    graceful-fs "^4.1.2"
+    mkdirp "^0.5.0"
+    nopt "2 || 3"
+    npmlog "0 || 1 || 2 || 3 || 4"
+    osenv "0"
+    request "^2.87.0"
+    rimraf "2"
+    semver "~5.3.0"
+    tar "^4.4.8"
+    which "1"
+
 node-gyp@^3.8.0:
   version "3.8.0"
   resolved "http://registry.npm.successchannel.tech/node-gyp/download/node-gyp-3.8.0.tgz#540304261c330e80d0d5edce253a68cb3964218c"
@@ -5495,23 +5610,6 @@ node-gyp@^3.8.0:
     rimraf "2"
     semver "~5.3.0"
     tar "^2.0.0"
-    which "1"
-
-node-gyp@^4.0.0:
-  version "4.0.0"
-  resolved "http://registry.npm.successchannel.tech/node-gyp/download/node-gyp-4.0.0.tgz#972654af4e5dd0cd2a19081b4b46fe0442ba6f45"
-  integrity sha1-lyZUr05d0M0qGQgbS0b+BEK6b0U=
-  dependencies:
-    glob "^7.0.3"
-    graceful-fs "^4.1.2"
-    mkdirp "^0.5.0"
-    nopt "2 || 3"
-    npmlog "0 || 1 || 2 || 3 || 4"
-    osenv "0"
-    request "^2.87.0"
-    rimraf "2"
-    semver "~5.3.0"
-    tar "^4.4.8"
     which "1"
 
 node-libs-browser@^2.0.0:
@@ -5588,6 +5686,20 @@ node-sass@^4.9.2:
     sass-graph "^2.2.4"
     stdout-stream "^1.4.0"
     "true-case-path" "^1.0.2"
+
+node-zopfli-es@1.0.3:
+  version "1.0.3"
+  resolved "http://registry.npm.successchannel.tech/node-zopfli-es/download/node-zopfli-es-1.0.3.tgz#3210c3a88d8be80d8b822465bccf5574d0d83fc1"
+  integrity sha1-MhDDqI2L6A2LgiRlvM9VdNDYP8E=
+  dependencies:
+    commander "2.20.0"
+    node-addon-api "1.6.3"
+    node-gyp "4.0.0"
+
+noop-logger@^0.1.1:
+  version "0.1.1"
+  resolved "http://registry.npm.successchannel.tech/noop-logger/download/noop-logger-0.1.1.tgz#94a2b1633c4f1317553007d8966fd0e841b6a4c2"
+  integrity sha1-lKKxYzxPExdVMAfYlm/Q6EG2pMI=
 
 "nopt@2 || 3":
   version "3.0.6"
@@ -5859,7 +5971,7 @@ npm@^6.9.0:
     worker-farm "^1.6.0"
     write-file-atomic "^2.4.2"
 
-"npmlog@0 || 1 || 2 || 3 || 4", npmlog@^4.0.0, npmlog@^4.0.2, npmlog@^4.1.2, npmlog@~4.1.2:
+"npmlog@0 || 1 || 2 || 3 || 4", npmlog@^4.0.0, npmlog@^4.0.1, npmlog@^4.0.2, npmlog@^4.1.2, npmlog@~4.1.2:
   version "4.1.2"
   resolved "http://registry.npm.successchannel.tech/npmlog/download/npmlog-4.1.2.tgz#08a7f2a8bf734604779a9efa4ad5cc717abb954b"
   integrity sha1-CKfyqL9zRgR3mp76StXMcXq7lUs=
@@ -6009,7 +6121,7 @@ os-browserify@^0.3.0:
   resolved "http://registry.npm.successchannel.tech/os-browserify/download/os-browserify-0.3.0.tgz#854373c7f5c2315914fc9bfc6bd8238fdda1ec27"
   integrity sha1-hUNzx/XCMVkU/Jv8a9gjj92h7Cc=
 
-os-homedir@^1.0.0:
+os-homedir@^1.0.0, os-homedir@^1.0.1:
   version "1.0.2"
   resolved "http://registry.npm.successchannel.tech/os-homedir/download/os-homedir-1.0.2.tgz#ffbc4988336e0e833de0c168c7ef152121aa7fb3"
   integrity sha1-/7xJiDNuDoM94MFox+8VISGqf7M=
@@ -6080,6 +6192,13 @@ p-locate@^3.0.0:
   integrity sha1-Mi1poFwCZLJZl9n0DNiokasAZKQ=
   dependencies:
     p-limit "^2.0.0"
+
+p-queue@5.0.0:
+  version "5.0.0"
+  resolved "http://registry.npm.successchannel.tech/p-queue/download/p-queue-5.0.0.tgz#80f1741d5e78a6fa72fce889406481baa5617a3c"
+  integrity sha1-gPF0HV54pvpy/OiJQGSBuqVhejw=
+  dependencies:
+    eventemitter3 "^3.1.0"
 
 p-try@^1.0.0:
   version "1.0.0"
@@ -6215,6 +6334,23 @@ parcel-bundler@^1.9.7:
     terser "^3.7.3"
     v8-compile-cache "^2.0.0"
     ws "^5.1.1"
+
+parcel-plugin-compress@^1.0.10:
+  version "1.0.10"
+  resolved "http://registry.npm.successchannel.tech/parcel-plugin-compress/download/parcel-plugin-compress-1.0.10.tgz#9105e5aa9eabd19368441d4828ecd911a2eef3b1"
+  integrity sha1-kQXlqp6r0ZNoRB1IKOzZEaLu87E=
+  dependencies:
+    "@gfx/zopfli" "1.0.13"
+    brotli "1.3.2"
+    chalk "2.4.2"
+    cosmiconfig "5.2.1"
+    filesize "4.1.2"
+    grapheme-breaker "0.3.2"
+    p-queue "5.0.0"
+    strip-ansi "5.2.0"
+  optionalDependencies:
+    iltorb "2.4.3"
+    node-zopfli-es "1.0.3"
 
 parse-asn1@^5.0.0:
   version "5.1.4"
@@ -6730,6 +6866,28 @@ posthtml@^0.11.2, posthtml@^0.11.3:
     posthtml-parser "^0.4.1"
     posthtml-render "^1.1.5"
 
+prebuild-install@^5.3.0:
+  version "5.3.0"
+  resolved "http://registry.npm.successchannel.tech/prebuild-install/download/prebuild-install-5.3.0.tgz#58b4d8344e03590990931ee088dd5401b03004c8"
+  integrity sha1-WLTYNE4DWQmQkx7giN1UAbAwBMg=
+  dependencies:
+    detect-libc "^1.0.3"
+    expand-template "^2.0.3"
+    github-from-package "0.0.0"
+    minimist "^1.2.0"
+    mkdirp "^0.5.1"
+    napi-build-utils "^1.0.1"
+    node-abi "^2.7.0"
+    noop-logger "^0.1.1"
+    npmlog "^4.0.1"
+    os-homedir "^1.0.1"
+    pump "^2.0.1"
+    rc "^1.2.7"
+    simple-get "^2.7.0"
+    tar-fs "^1.13.0"
+    tunnel-agent "^0.6.0"
+    which-pm-runs "^1.0.0"
+
 prelude-ls@~1.1.2:
   version "1.1.2"
   resolved "http://registry.npm.successchannel.tech/prelude-ls/download/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
@@ -6829,7 +6987,15 @@ public-encrypt@^4.0.0:
     randombytes "^2.0.1"
     safe-buffer "^5.1.2"
 
-pump@^2.0.0:
+pump@^1.0.0:
+  version "1.0.3"
+  resolved "http://registry.npm.successchannel.tech/pump/download/pump-1.0.3.tgz#5dfe8311c33bbf6fc18261f9f34702c47c08a954"
+  integrity sha1-Xf6DEcM7v2/BgmH580cCxHwIqVQ=
+  dependencies:
+    end-of-stream "^1.1.0"
+    once "^1.3.1"
+
+pump@^2.0.0, pump@^2.0.1:
   version "2.0.1"
   resolved "http://registry.npm.successchannel.tech/pump/download/pump-2.0.1.tgz#12399add6e4cf7526d973cbc8b5ce2e2908b3909"
   integrity sha1-Ejma3W5M91Jtlzy8i1zi4pCLOQk=
@@ -7015,7 +7181,7 @@ read@1, read@~1.0.1, read@~1.0.7:
   dependencies:
     mute-stream "~0.0.4"
 
-"readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.3, readable-stream@^2.3.6, readable-stream@~2.3.3, readable-stream@~2.3.6:
+"readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.0, readable-stream@^2.3.3, readable-stream@^2.3.5, readable-stream@^2.3.6, readable-stream@~2.3.3, readable-stream@~2.3.6:
   version "2.3.6"
   resolved "http://registry.npm.successchannel.tech/readable-stream/download/readable-stream-2.3.6.tgz#b11c27d88b8ff1fbe070643cf94b0c79ae1b0aaf"
   integrity sha1-sRwn2IuP8fvgcGQ8+UsMea4bCq8=
@@ -7590,6 +7756,20 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "http://registry.npm.successchannel.tech/signal-exit/download/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
   integrity sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
 
+simple-concat@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.successchannel.tech/simple-concat/download/simple-concat-1.0.0.tgz#7344cbb8b6e26fb27d66b2fc86f9f6d5997521c6"
+  integrity sha1-c0TLuLbib7J9ZrL8hvn21Zl1IcY=
+
+simple-get@^2.7.0:
+  version "2.8.1"
+  resolved "http://registry.npm.successchannel.tech/simple-get/download/simple-get-2.8.1.tgz#0e22e91d4575d87620620bc91308d57a77f44b5d"
+  integrity sha1-DiLpHUV12HYgYgvJEwjVenf0S10=
+  dependencies:
+    decompress-response "^3.3.0"
+    once "^1.3.1"
+    simple-concat "^1.0.0"
+
 simple-swizzle@^0.2.2:
   version "0.2.2"
   resolved "http://registry.npm.successchannel.tech/simple-swizzle/download/simple-swizzle-0.2.2.tgz#a4da6b635ffcccca33f70d17cb92592de95e557a"
@@ -7953,6 +8133,13 @@ stringify-package@^1.0.0:
   resolved "http://registry.npm.successchannel.tech/stringify-package/download/stringify-package-1.0.0.tgz#e02828089333d7d45cd8c287c30aa9a13375081b"
   integrity sha1-4CgoCJMz19Rc2MKHwwqpoTN1CBs=
 
+strip-ansi@5.2.0:
+  version "5.2.0"
+  resolved "http://registry.npm.successchannel.tech/strip-ansi/download/strip-ansi-5.2.0.tgz#8c9a536feb6afc962bdfa5b104a5091c1ad9c0ae"
+  integrity sha1-jJpTb+tq/JYr36WxBKUJHBrZwK4=
+  dependencies:
+    ansi-regex "^4.1.0"
+
 strip-ansi@^3.0.0, strip-ansi@^3.0.1:
   version "3.0.1"
   resolved "http://registry.npm.successchannel.tech/strip-ansi/download/strip-ansi-3.0.1.tgz#6a385fb8853d952d5ff05d0e8aaf94278dc63dcf"
@@ -8059,6 +8246,29 @@ symbol-tree@^3.2.2:
   resolved "http://registry.npm.successchannel.tech/symbol-tree/download/symbol-tree-3.2.2.tgz#ae27db38f660a7ae2e1c3b7d1bc290819b8519e6"
   integrity sha1-rifbOPZgp64uHDt9G8KQgZuFGeY=
 
+tar-fs@^1.13.0:
+  version "1.16.3"
+  resolved "http://registry.npm.successchannel.tech/tar-fs/download/tar-fs-1.16.3.tgz#966a628841da2c4010406a82167cbd5e0c72d509"
+  integrity sha1-lmpiiEHaLEAQQGqCFny9Xgxy1Qk=
+  dependencies:
+    chownr "^1.0.1"
+    mkdirp "^0.5.1"
+    pump "^1.0.0"
+    tar-stream "^1.1.2"
+
+tar-stream@^1.1.2:
+  version "1.6.2"
+  resolved "http://registry.npm.successchannel.tech/tar-stream/download/tar-stream-1.6.2.tgz#8ea55dab37972253d9a9af90fdcd559ae435c555"
+  integrity sha1-jqVdqzeXIlPZqa+Q/c1VmuQ1xVU=
+  dependencies:
+    bl "^1.0.0"
+    buffer-alloc "^1.2.0"
+    end-of-stream "^1.0.0"
+    fs-constants "^1.0.0"
+    readable-stream "^2.3.0"
+    to-buffer "^1.1.1"
+    xtend "^4.0.0"
+
 tar@^2.0.0:
   version "2.2.2"
   resolved "http://registry.npm.successchannel.tech/tar/download/tar-2.2.2.tgz#0ca8848562c7299b8b446ff6a4d60cdbb23edc40"
@@ -8156,6 +8366,11 @@ to-arraybuffer@^1.0.0:
   version "1.0.1"
   resolved "http://registry.npm.successchannel.tech/to-arraybuffer/download/to-arraybuffer-1.0.1.tgz#7d229b1fcc637e466ca081180836a7aabff83f43"
   integrity sha1-fSKbH8xjfkZsoIEYCDanqr/4P0M=
+
+to-buffer@^1.1.1:
+  version "1.1.1"
+  resolved "http://registry.npm.successchannel.tech/to-buffer/download/to-buffer-1.1.1.tgz#493bd48f62d7c43fcded313a03dcadb2e1213a80"
+  integrity sha1-STvUj2LXxD/N7TE6A9ytsuEhOoA=
 
 to-fast-properties@^1.0.3:
   version "1.0.3"
@@ -8788,6 +9003,11 @@ which-module@^2.0.0:
   version "2.0.0"
   resolved "http://registry.npm.successchannel.tech/which-module/download/which-module-2.0.0.tgz#d9ef07dce77b9902b8a3a8fa4b31c3e3f7e6e87a"
   integrity sha1-2e8H3Od7mQK4o6j6SzHD4/fm6Ho=
+
+which-pm-runs@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.successchannel.tech/which-pm-runs/download/which-pm-runs-1.0.0.tgz#670b3afbc552e0b55df6b7780ca74615f23ad1cb"
+  integrity sha1-Zws6+8VS4LVd9rd4DKdGFfI60cs=
 
 which@1, which@^1.2.9, which@^1.3.0, which@^1.3.1:
   version "1.3.1"
