@@ -96,6 +96,7 @@
 <script>
 // import videojs from 'video.js'
 import bg from '../components/bg'
+import utils from '../common/utils'
 import gcoord from 'gcoord'
 export default {
   components:{
@@ -131,22 +132,29 @@ export default {
       this.initInterval()
     },
     openMap(longitude,latitude,name,desc){
-      var result = gcoord.transform(
-        [longitude, latitude],    // 经纬度坐标
-        gcoord.BD09,               // 当前坐标系
-        gcoord.GCJ02                 // 目标坐标系
-      );
-      console.log(result)
-      window.jsSDKReady.then(({wx})=>{
-        wx.openLocation({
-          latitude:result[1], // 纬度，浮点数，范围为90 ~ -90
-          longitude:result[0], // 经度，浮点数，范围为180 ~ -180。
-          name, // 位置名
-          address: desc, // 地址详情说明
-          scale: 15, // 地图缩放级别,整形值,范围从1~28。默认为最大
-          // infoUrl: 'http://www.baidu.com' // 在查看位置界面底部显示的超链接,可点击跳转
-        });
-      })
+      if(utils.isWeixinBrowser()){
+        window.jsSDKReady.then(({wx})=>{
+          var result = gcoord.transform(
+            [longitude, latitude],    // 经纬度坐标
+            gcoord.BD09,               // 当前坐标系
+            gcoord.GCJ02                 // 目标坐标系
+          );
+          console.log(result)
+          wx.openLocation({
+            latitude:result[1], // 纬度，浮点数，范围为90 ~ -90
+            longitude:result[0], // 经度，浮点数，范围为180 ~ -180。
+            name, // 位置名
+            address: desc, // 地址详情说明
+            scale: 15, // 地图缩放级别,整形值,范围从1~28。默认为最大
+            // infoUrl: 'http://www.baidu.com' // 在查看位置界面底部显示的超链接,可点击跳转
+          });
+        })
+      }else{
+        debugger
+        window.map.centerAndZoom(new BMap.Point(longitude,latitude),15);
+        window.map.enableScrollWheelZoom(true);
+        mapDom.style.display = "block"
+      }
     }
   }
 }

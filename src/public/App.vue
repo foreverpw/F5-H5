@@ -5,6 +5,7 @@
     <div class="rotate-mask">
       请在竖屏模式下浏览
     </div>
+    <div id="bmap" ref="map"></div>
     <div class="header">
       <img src="./assets/imgs/logo.png" alt="" class="logo">
       <img v-show="!music.paused" src="./assets/imgs/music-on.png" alt="" class="music-control" @click="toggleBGM">
@@ -78,6 +79,9 @@ export default {
   created(){
   },
   mounted(){
+    window.map = new BMap.Map("bmap");
+    window.mapDom = this.$refs.map
+
     window.fp = this.$refs.fullpage
     // window.addEventListener('orientationchange', function() {
     //   alert(1)
@@ -171,6 +175,15 @@ export default {
   .app{
     height:100%;
   }
+  #bmap{
+    width: 100%;
+    height:100%;
+    position: fixed!important;
+    left:0;
+    top:0;
+    z-index: 9999!important;
+    display: none;
+  }
   .header{
     width: 100%;
     position: fixed;
@@ -209,7 +222,7 @@ export default {
     height:100%;
     background: #555;
     position: fixed;
-    z-index: 9999;
+    z-index: 99999;
     display: none;
     align-items: center;
     justify-content: center;
@@ -223,7 +236,7 @@ export default {
     position: fixed;
     right:60px;
     top:20px;
-    z-index: 9999;
+    z-index: 999;
   }
   .share-icon{
     height: 0;

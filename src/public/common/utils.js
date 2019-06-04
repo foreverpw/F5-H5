@@ -130,6 +130,9 @@ export default {
       return true;
     }
   },
+  isWeixinBrowser(){
+    return /micromessenger/.test(navigator.userAgent.toLowerCase())
+  },
   // 判断是否为电话号码
   isTelAvailable: function (tel) {
     var myreg = /^(([0\+]\d{2,3}-)?(0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$/;

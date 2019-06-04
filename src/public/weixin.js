@@ -6,7 +6,7 @@ window.jsSDKReady = service.getJsSDKSignature().then(signData=>{
     // debug:true,
     jsApiList:['updateAppMessageShareData','updateTimelineShareData','getLocation','openLocation']
   })
-  
+  debugger
   window.wx = new WechatJSSDK(config);
 
   return window.wx.initialize()
