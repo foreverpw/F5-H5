@@ -4,7 +4,7 @@ import './assets/scss/main.scss';
 import 'animate.css'
 // import VueCookie from 'vue-cookie';
 // Vue.use(VueCookie);
-console.log('v1.0.2')
+console.log('v1.0.3')
 
 import FastClick from 'fastclick';
 FastClick(document.body);
