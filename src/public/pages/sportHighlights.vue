@@ -26,7 +26,7 @@
 <script>
 // import videojs from 'video.js'
 var videojsPromise = import('../lib/video.js')
-import gameImgs from '../assets/imgs/sportHighlights/*.jpg'
+import gameImgs from '../assets/imgs/sportHighlights/*.jpeg'
 import bg from '../components/bg'
 export default {
   components:{
