@@ -156,8 +156,8 @@ export default {
         // map.centerAndZoom(point,17);    
         // map.enableScrollWheelZoom(true);
         // var marker = new BMap.Marker(point);// 创建标注
-        // map.addOverlay(marker);       
-        window.location.href = `http://api.map.baidu.com/marker?location=${latitude},${longitude}&title=${name}&content=${desc}&output=html`
+        // map.addOverlay(marker);  
+        window.location.href=`http://api.map.baidu.com/marker?location=${latitude},${longitude}&title=${name}&content=${desc}&output=html`     
       }
     }
   }
