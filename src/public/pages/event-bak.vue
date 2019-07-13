@@ -7,8 +7,9 @@
       <div class="cards">
         <div class="header" :class="[headerActiveClass]">
           <div class="fg">
-            <div class="item" :class="{active:state==1}" @click="changeState(1)">上海</div>
-            <div class="item" :class="{active:state==2}" @click="changeState(2)">北京</div>
+            <div class="item" :class="{active:state==1}" @click="changeState(1)">长沙</div>
+            <div class="item" :class="{active:state==2}" @click="changeState(2)">重庆</div>
+            <div class="item" :class="{active:state==3}" @click="changeState(3)">广州</div>
           </div>
         </div>
         <div class="detail">
@@ -24,15 +25,15 @@
               <div class="name">张浩林</div>
               <div class="quote">我是北京站冠军张浩林&nbsp;&nbsp;&#10;想防住我的soma步？&#10;你可以来试试！</div>
               </div>
-              <div class="location" @click="openMap(121.524593,31.312314,'洛克公园(江湾店)','上海市杨浦区国和路346号江湾体育场5号门内')">
+              <div class="location" @click="openMap(113.009834,28.193423,'长沙乐运三秒区篮球场','长沙市芙蓉区曙光北路119号 曙光798城市体验馆2号栋')">
                 <img src="../assets/imgs/page2/location.png" alt="" class="icon">
                 <div class="info">
                   <div class="top">
-                    <div class="date">7.20</div>
-                    洛克公园(江湾店)
+                    <div class="date">6.8</div>
+                    长沙乐运三秒区篮球场
                   </div>
-                  <div class="address">上海市杨浦区国和路346号江湾体育场5号门内</div>
-                  <!-- 121.524593,31.312314 -->
+                  <div class="address">长沙市芙蓉区曙光北路119号 曙光798城市体验馆2号栋</div>
+                  <!-- 113.009834,28.193423 -->
                 </div>
               </div>
             </div>
@@ -43,21 +44,46 @@
             leave-active-class="animated fadeOut faster"
           >
             <div class="detail-container" v-show="state==2">
-              <img src="../assets/imgs/page2/bj-kol.png" alt="" class="kol">
+              <img src="../assets/imgs/page2/cq-kol.png" alt="" class="kol kol1">
               <div class="center-layout">
-                <div class="title">路人王46冠王&#10;“头盔哥”</div>
-                <div class="name">郝天佶</div>
-                <div class="quote quote2">拼尽全力捍卫荣耀，&#10;血战四方谁与争锋，&#10;我是“头盔哥”郝天佶，&#10;来哈弗X路人王北京站，&#10;我们一决高下！</div>
+                <div class="title">街球灵魂继承者&#10;“十万先生”</div>
+              <div class="name">孟亚东</div>
+              <div class="quote">“大魔王”平常心前来&#10;踢馆！球场要用实力说&#10;话，不服就来战！</div>
               </div>
-              <div class="location" @click="openMap(116.518785,39.89171,'永乐汇·数字空间篮球文化中心','北京市朝阳区广渠东路')">
+              <div class="location" @click="openMap(106.515902,29.672293,'重庆Elite篮球中心','重庆市渝北区北部区金渝大道28号辅助厂房')">
                 <img src="../assets/imgs/page2/location.png" alt="" class="icon">
                 <div class="info">
                   <div class="top">
-                    <div class="date">8.24</div>
-                    永乐汇<span class="sm">数字空间篮球文化中心</span>
+                    <div class="date">6.13</div>
+                    重庆Elite篮球中心
                   </div>
-                  <div class="address">北京市朝阳区广渠东路</div>
-                  <!-- 116.518785,39.89171 -->
+                  <div class="address">重庆市渝北区北部区金渝大道28号辅助厂房</div>
+                  <!-- 106.515902,29.672293 -->
+                </div>
+              </div>
+            </div>
+          </transition>
+          <transition
+            name="custom-classes-transition"
+            enter-active-class="animated fadeIn faster delay-500ms"
+            leave-active-class="animated fadeOut faster"
+          >
+            <div class="detail-container" v-show="state==3">
+              <img src="../assets/imgs/page2/gz-kol.png" alt="" class="kol kol3">
+              <div class="center-layout">
+                <div class="title">飘逸灵动技巧派&#10;“洋葱哥”</div>
+              <div class="name">董康潮</div>
+              <div class="quote">“洋葱哥”董康潮参上！&#10;你的反应和我的过人哪个&#10;更快？来一较高下吧！</div>
+              </div>
+              <div class="location" @click="openMap(113.348537,23.178798,'广州L2球馆','广州市天河区天河客运站旁 元岗横路18号（L2体育会天河旗舰店）')">
+                <img src="../assets/imgs/page2/location.png" alt="" class="icon">
+                <div class="info">
+                  <div class="top">
+                    <div class="date">6.22</div>
+                    广州L2球馆
+                  </div>
+                  <div class="address">广州市天河区天河客运站旁 元岗横路18号（L2体育会天河旗舰店）</div>
+                  <!-- 113.348537,23.178798 -->
                 </div>
               </div>
             </div>
@@ -94,7 +120,7 @@ export default {
     initInterval(){
       clearInterval(this.intvl)
       this.intvl = setInterval(() => {
-        this.state = this.state%2+1
+        this.state = this.state%3+1
       }, 2000);
     },
     cancelInterval(){
@@ -200,6 +226,16 @@ export default {
         left:0;
         height:calc(100% - 1.5rem);
         z-index: 9;
+        &.kol3{
+          top:2rem;
+          height:calc(100% - 2rem);
+          left:-1rem;
+          z-index: 9;
+        }
+        &.kol1{
+          left:-1rem;
+          z-index: 9;
+        }
       }
       .center-layout{
         width:100%;
@@ -256,9 +292,6 @@ export default {
         flex-direction: column;
         align-items: flex-end;
         font-weight: bold;
-        &.quote2{
-          height:8.52rem;
-        }
       }
       .location{
         width:25.04rem;
@@ -288,7 +321,7 @@ export default {
             font-weight: bold;
             color:rgba(208,6,81,1);
             display: flex;
-            align-items: flex-end;
+            align-items: center;
             white-space:nowrap;
             line-height: 1.52rem;
             .date{
@@ -296,10 +329,6 @@ export default {
               font-weight:bold;
               margin-right:0.72rem;
               color:rgba(208,6,81,1);
-            }
-            .sm{
-              font-size: 0.95rem;
-              line-height: 1.1rem;
             }
           }
           .address{
@@ -344,8 +373,9 @@ export default {
         left:0;
         top:0;
         z-index: -1;
-        background: url(../assets/imgs/page5/lights/left-active-fg.png);
+        background: url(../assets/imgs/page2/right-active-fg.png);
         background-size: cover;
+        transform: rotateY(180deg)
       }
       &.state2 .fg::after{
         content: "";
@@ -355,20 +385,20 @@ export default {
         left:0;
         top:0;
         z-index: -1;
-        background: url(../assets/imgs/page5/lights/right-active-fg.png);
+        background: url(../assets/imgs/page2/center-active-fg.png);
         background-size: cover;
       }
-      // &.state3 .fg::after{
-      //   content: "";
-      //   position: absolute;
-      //   width: 100%;
-      //   height:100%;
-      //   left:0;
-      //   top:0;
-      //   z-index: -1;
-      //   background: url(../assets/imgs/page2/right-active-fg.png);
-      //   background-size: cover;
-      // }
+      &.state3 .fg::after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height:100%;
+        left:0;
+        top:0;
+        z-index: -1;
+        background: url(../assets/imgs/page2/right-active-fg.png);
+        background-size: cover;
+      }
     }
   }
 </style>
