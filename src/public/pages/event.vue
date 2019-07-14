@@ -51,7 +51,7 @@
             <div class="detail-container" v-show="state==2">
               <img src="../assets/imgs/page2/bj-kol.png" alt="" class="kol">
               <div class="center-layout">
-                <div class="title">路人王46冠王&#10;国内顶尖“街球魔王”&#10;“头盔哥”</div>
+                <div class="title">路人王46冠王“头盔哥”&#10;国内顶尖“街球魔王”</div>
                 <div class="name">郝天佶</div>
                 <div class="quote quote2">想超越我的神话？&#10;来哈弗X路人王北京&#10;站，我们一决高下！</div>
               </div>
@@ -241,14 +241,18 @@ export default {
         .title{
           font-size:1.05rem;
           line-height:1.2rem;
+          margin-right: 0;
           margin-bottom:0.6vh;
+          word-break: keep-all;
         }
         .name{
           font-size:1.3rem;
+          margin-right: 0;
           margin-bottom:0.3vh;
         }
         .quote{
           font-size: 0.85rem;
+          margin-right: 0;
           padding:0.6vh;
         }
       }
