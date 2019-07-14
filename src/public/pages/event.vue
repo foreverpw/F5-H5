@@ -22,7 +22,7 @@
               <img src="../assets/imgs/page2/sh-kol-2.png" alt="" class="kol2">
               <div class="center-layout1 align-left">
                 <div class="name left">柳杨杰</div>
-                <div class="title left">所向披靡的“全能战将”上海张“小霸王”</div>
+                <div class="title left">所向披靡的“全能战将”上海“小霸王”</div>
                 <div class="quote left">驰骋球场的气势，拼杀四方的斗&nbsp;&nbsp;&#10;志，我是“打铁”柳杨杰，够胆&#10;就来挑战我吧！</div>
               </div>
               <div class="center-layout2">
@@ -51,7 +51,7 @@
             <div class="detail-container" v-show="state==2">
               <img src="../assets/imgs/page2/bj-kol.png" alt="" class="kol">
               <div class="center-layout">
-                <div class="title">路人王46冠王&#10;“头盔哥”</div>
+                <div class="title">路人王46冠王&#10;国内顶尖“街球魔王”&#10;“头盔哥”</div>
                 <div class="name">郝天佶</div>
                 <div class="quote quote2">想超越我的神话？&#10;来哈弗X路人王北京&#10;站，我们一决高下！</div>
               </div>
@@ -59,10 +59,10 @@
                 <img src="../assets/imgs/page2/location.png" alt="" class="icon">
                 <div class="info">
                   <div class="top">
-                    <div class="date">8.24</div>
+                    <div class="date">8.24</div>  
                     永乐汇<span class="sm">数字空间篮球文化中心</span>
                   </div>
-                  <div class="address">北京市朝阳区广渠东路</div>
+                  <div class="address">北京市广渠东路2号创1958文创园摩登天空南侧</div>
                   <!-- 116.518785,39.89171 -->
                 </div>
               </div>
