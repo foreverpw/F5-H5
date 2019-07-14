@@ -152,12 +152,12 @@ export default {
     height:100%;
   }
   .h-title{
-    margin-top:4.57vh;
+    margin-top:3.17vh;
     width:24.64rem;
     height:5.8rem;
   }
   .desc{
-    margin-top:1.6vh;
+    margin-top:1vh;
     width:26.92rem;
     height:2.72rem;
     font-size:1.12rem;
@@ -168,7 +168,7 @@ export default {
   }
   .gift{
     position: absolute;
-    top:12.38vh;
+    top:9.38vh;
     right:0;
     width:10.6rem;
     height:9.64rem;
@@ -177,11 +177,11 @@ export default {
   }
   .cards{
     width: 27.72rem;
-    margin-top:3.6vh;
-    margin-bottom:1.52rem;
+    margin-top:2.6vh;
+    // margin-bottom:1.52rem;
     overflow: hidden;
     flex:1;
-    max-height: 34.6rem;
+    max-height: 30.6rem;
     display:flex;
     flex-direction: column;
     background:linear-gradient(0deg,rgba(198,205,229,1),rgba(255,255,255,1));
