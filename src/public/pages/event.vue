@@ -21,14 +21,14 @@
               <img src="../assets/imgs/page2/sh-kol-1.png" alt="" class="kol1">
               <img src="../assets/imgs/page2/sh-kol-2.png" alt="" class="kol2">
               <div class="center-layout1 align-left">
-                <div class="name left">张浩林</div>
-                <div class="title left">soma步“教科书”“魔鬼老师”</div>
-                <div class="quote left">我是北京站冠军张浩林&nbsp;&nbsp;&#10;想防住我的soma步？&#10;你可以来试试！</div>
+                <div class="name left">柳杨杰</div>
+                <div class="title left">所向披靡的“全能战将”上海张“小霸王”</div>
+                <div class="quote left">驰骋球场的气势，拼杀四方的斗&nbsp;&nbsp;&#10;志，我是“打铁”柳杨杰，够胆&#10;就来挑战我吧！</div>
               </div>
               <div class="center-layout2">
-                <div class="name ">张浩林</div>
-                <div class="title ">soma步“教科书”“魔鬼老师”</div>
-                <div class="quote ">我是北京站冠军张浩林&nbsp;&nbsp;&#10;想防住我的soma步？&#10;你可以来试试！</div>
+                <div class="name ">吴凯</div>
+                <div class="title ">节奏与速度的最强化身“控球天王”</div>
+                <div class="quote ">以雷霆万钧之势，化节奏与速度&nbsp;&nbsp;&#10;为利刃，我是“阿凯”吴凯&#10;想赢我？拼上你的全力！</div>
               </div>
               <div class="location" @click="openMap(121.524593,31.312314,'洛克公园(江湾店)','上海市杨浦区国和路346号江湾体育场5号门内')">
                 <img src="../assets/imgs/page2/location.png" alt="" class="icon">
@@ -53,7 +53,7 @@
               <div class="center-layout">
                 <div class="title">路人王46冠王&#10;“头盔哥”</div>
                 <div class="name">郝天佶</div>
-                <div class="quote quote2">拼尽全力捍卫荣耀，&#10;血战四方谁与争锋，&#10;我是“头盔哥”郝天佶，&#10;来哈弗X路人王北京站，&#10;我们一决高下！</div>
+                <div class="quote quote2">想超越我的神话？&#10;来哈弗X路人王北京&#10;站，我们一决高下！</div>
               </div>
               <div class="location" @click="openMap(116.518785,39.89171,'永乐汇·数字空间篮球文化中心','北京市朝阳区广渠东路')">
                 <img src="../assets/imgs/page2/location.png" alt="" class="icon">
@@ -181,7 +181,7 @@ export default {
     // margin-bottom:1.52rem;
     overflow: hidden;
     flex:1;
-    max-height: 30.6rem;
+    max-height: 32.6rem;
     display:flex;
     flex-direction: column;
     background:linear-gradient(0deg,rgba(198,205,229,1),rgba(255,255,255,1));
@@ -267,6 +267,7 @@ export default {
           font-size:1.05rem;
           margin-right: 0;
           line-height:1.2rem;
+          word-break: keep-all;
         }
         .name{
           font-size:1.3rem;
