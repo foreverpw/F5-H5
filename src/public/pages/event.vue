@@ -18,11 +18,17 @@
             leave-active-class="animated fadeOut faster"
           >
             <div class="detail-container" v-show="state==1">
-              <img src="../assets/imgs/page2/cs-kol.png" alt="" class="kol kol1">
-              <div class="center-layout">
-                <div class="title">soma步“教科书”&#10;“魔鬼老师”</div>
-              <div class="name">张浩林</div>
-              <div class="quote">我是北京站冠军张浩林&nbsp;&nbsp;&#10;想防住我的soma步？&#10;你可以来试试！</div>
+              <img src="../assets/imgs/page2/sh-kol-1.png" alt="" class="kol1">
+              <img src="../assets/imgs/page2/sh-kol-2.png" alt="" class="kol2">
+              <div class="center-layout1 align-left">
+                <div class="name left">张浩林</div>
+                <div class="title left">soma步“教科书”“魔鬼老师”</div>
+                <div class="quote left">我是北京站冠军张浩林&nbsp;&nbsp;&#10;想防住我的soma步？&#10;你可以来试试！</div>
+              </div>
+              <div class="center-layout2">
+                <div class="name ">张浩林</div>
+                <div class="title ">soma步“教科书”“魔鬼老师”</div>
+                <div class="quote ">我是北京站冠军张浩林&nbsp;&nbsp;&#10;想防住我的soma步？&#10;你可以来试试！</div>
               </div>
               <div class="location" @click="openMap(121.524593,31.312314,'洛克公园(江湾店)','上海市杨浦区国和路346号江湾体育场5号门内')">
                 <img src="../assets/imgs/page2/location.png" alt="" class="icon">
@@ -201,6 +207,20 @@ export default {
         height:calc(100% - 1.5rem);
         z-index: 9;
       }
+      .kol1{
+        position: absolute;
+        top:1.2rem;
+        left:0.8rem;
+        height:calc(50% - 1.2rem);
+        z-index: 9;
+      }
+      .kol2{
+        position: absolute;
+        bottom:0;
+        right:0rem;
+        height:60%;
+        z-index: 9;
+      }
       .center-layout{
         width:100%;
         height:calc(100% - 5.4vh);
@@ -208,6 +228,58 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+      }
+      .center-layout1{
+        position: absolute;
+        z-index: 7;
+        top:3.4vh;
+        left:14vh;
+        right:0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .title{
+          font-size:1.05rem;
+          line-height:1.2rem;
+          margin-bottom:0.6vh;
+        }
+        .name{
+          font-size:1.3rem;
+          margin-bottom:0.3vh;
+        }
+        .quote{
+          font-size: 0.85rem;
+          padding:0.6vh;
+        }
+      }
+      .center-layout2{
+        position: absolute;
+        margin-top:1vh;
+        z-index: 7;
+        left:0;
+        right:22vh;
+        bottom:8.3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .title{
+          margin-bottom:0.6vh;
+          font-size:1.05rem;
+          margin-right: 0;
+          line-height:1.2rem;
+        }
+        .name{
+          font-size:1.3rem;
+          margin-bottom:0.3vh;
+          margin-right: 0;
+        }
+        .quote{
+          margin-right: 0;
+          font-size: 0.85rem;
+          width: 100%;
+          padding:0.6vh;
+          background:linear-gradient(-90deg,rgba(164,17,88,1),rgba(255,255,255,0));
+        }
       }
       .title{
         // position: absolute;
@@ -222,6 +294,9 @@ export default {
         text-align: right;
         white-space: pre-line;
         font-weight: bold;
+        &.left{
+          text-align: left;
+        }
       }
       .name{
         // position: absolute;
@@ -233,11 +308,14 @@ export default {
         color:rgba(141,32,80,1);
         text-align: right;
         font-weight: bold;
+        &.left{
+          text-align: left;
+        }
       }
       .quote{
         // position: absolute;
         width:calc(100% - 0.75rem);
-        height:6.32rem;
+        // height:6.32rem;
         // top:12.44rem;
         margin-right:0.75rem;
         padding:1.2vh;
@@ -248,16 +326,21 @@ export default {
         color:rgba(255,255,255,1);
         opacity:0.83;
         white-space: pre-line;
-        background: url(../assets/imgs/page2/quote-bg.png);
+        // background: url(../assets/imgs/page2/quote-bg.png);
+        background:linear-gradient(-90deg,rgba(164,17,88,1),rgba(255,255,255,0) 60%);
         // background-position: right 100%;
         // background-position: 100% top;
         background-size: cover;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: flex-end;
         font-weight: bold;
         &.quote2{
-          height:8.52rem;
+          // height:8.52rem;
+        }
+        &.left{
+          text-align: left;
+          background:linear-gradient(90deg,rgba(164,17,88,1),rgba(255,255,255,0));
         }
       }
       .location{
