@@ -217,7 +217,8 @@ export default {
       .kol2{
         position: absolute;
         bottom:0;
-        right:0rem;
+        // right:0rem;
+        left:calc(100% - 24vh);
         height:60%;
         z-index: 9;
       }
