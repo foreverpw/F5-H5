@@ -4,9 +4,19 @@ import './assets/scss/main.scss';
 import 'animate.css'
 // import VueCookie from 'vue-cookie';
 // Vue.use(VueCookie);
-console.log('v1.1.2')
+console.log('v1.1.3')
 
 import FastClick from 'fastclick';
+FastClick.prototype.focus = function (targetElement) {
+  let length;
+  if (targetElement.setSelectionRange && targetElement.type.indexOf('date') !== 0 && targetElement.type !== 'time' && targetElement.type !== 'month') {
+    length = targetElement.value.length;
+    targetElement.focus();
+    targetElement.setSelectionRange(length, length);
+  } else {
+    targetElement.focus();
+  }
+}
 FastClick(document.body);
 
 import VueLazyload from 'vue-lazyload'
