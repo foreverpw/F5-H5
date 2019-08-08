@@ -1,5 +1,6 @@
 <template>
   <bg>
+    <img class="battle" src="../assets/imgs/texts/battle.png" alt="">
     <img class="slogan" src="../assets/imgs/texts/slogan.png" alt="">
   </bg>
 </template>
@@ -21,9 +22,16 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+  .battle{
+    position: absolute;
+    width:27.2rem;
+    top:6.2vh;
+    left:1.08rem;
+  }
   .slogan{
-    width: 26.32rem;
-    margin-left:2.04rem;
-    margin-top:7.5vh;
+    position: absolute;
+    width: 21.04rem;
+    bottom:6.2vh;
+    right:0;
   }
 </style>
