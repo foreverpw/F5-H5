@@ -9,16 +9,15 @@
           <img src="../assets/imgs/page2/kols.png" alt="" class="kols">
         </div>
       </div>
-      <div class="location" @click="openMap(113.009834,28.193423,'长沙乐运三秒区篮球场','长沙市芙蓉区曙光北路119号 曙光798城市体验馆2号栋')">
-        <img src="../assets/imgs/page2/location.png" alt="" class="icon">
+      <div class="location" @click="openMap(116.518785,39.89171,'永乐汇·数字空间篮球文化中心','北京市朝阳区广渠东路')">
+        <!-- <img src="../assets/imgs/page2/location.png" alt="" class="icon">
         <div class="info">
           <div class="top">
-            <div class="date">6.8</div>
-            长沙乐运三秒区篮球场
+            <div class="date">8.24</div>  
+            永乐汇<span class="sm">数字空间篮球文化中心</span>
           </div>
-          <div class="address">长沙市芙蓉区曙光北路119号 曙光798城市体验馆2号栋</div>
-          <!-- 113.009834,28.193423 -->
-        </div>
+          <div class="address">北京市广渠东路2号创1958文创园摩登天空南侧</div>
+        </div> -->
       </div>
     </div>
   </bg>
@@ -105,10 +104,12 @@ export default {
     flex:1;
     display: flex;
     align-items: flex-end;
-    margin-top:-0.8rem;
+    margin-top:-5vh;
+    overflow: auto;
     .inner{
       display: flex;
       align-items: flex-start;
+      max-height:100%;
       .kols{
         width: 100%;
       }
@@ -141,8 +142,9 @@ export default {
     z-index: 999;
   }
   .location{
-    background: url(../assets/imgs/page2/addr-bg.png);
+    background: url(../assets/imgs/page2/addr.png);
     background-position: 100% 100%;
+    background-size: cover;
     position: absolute;
     left:1.28rem;
     bottom:3.1vh;
