@@ -9,6 +9,7 @@
           <img src="../assets/imgs/page2/kols.png" alt="" class="kols">
         </div>
       </div>
+      <img src="../assets/imgs/page2/toukui.png" alt="" class="toukui">
       <div class="location" @click="openMap(116.518785,39.89171,'永乐汇·数字空间篮球文化中心','北京市朝阳区广渠东路')">
         <!-- <img src="../assets/imgs/page2/location.png" alt="" class="icon">
         <div class="info">
@@ -115,6 +116,14 @@ export default {
       }
     }
   }
+  .toukui{
+    position: absolute;
+    z-index: 9999;
+    left:10rem;
+    right:12rem;
+    bottom:15vh;
+    width:8rem;
+  }
   .h-title{
     margin-top:3.17vh;
     width:24.64rem;
@@ -144,12 +153,13 @@ export default {
   .location{
     background: url(../assets/imgs/page2/addr.png);
     background-position: 100% 100%;
-    background-size: cover;
+    background-size: contain;
     position: absolute;
-    left:1.28rem;
-    bottom:3.1vh;
+    left:auto;
+    right:auto;
+    bottom:3.2vh;
     width: 27.28rem;
-    height:6.16rem;
+    height:5.18rem;
     z-index: 9999;
     display: flex;
     align-items: flex-start;

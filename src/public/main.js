@@ -4,7 +4,7 @@ import './assets/scss/main.scss';
 import 'animate.css'
 // import VueCookie from 'vue-cookie';
 // Vue.use(VueCookie);
-console.log('v1.1.5')
+console.log('v1.2.0')
 
 import attachFastClick, {FastClick} from 'fastclick';
 var deviceIsWindowsPhone = navigator.userAgent.indexOf("Windows Phone") >= 0;
